@@ -110,21 +110,21 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 				variants={navVariant}
 				animate={isNavOpen ? "open" : "closed"}
 				initial={false}>
-				<div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-gray-700 min-w-[100vw] ">
+				<div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-white min-w-[100vw] shadow-2xl">
 					<div className="flex flex-col items-center space-y-8 my-auto mx-0 z-50">
 						{/* title */}
 						<motion.h1
 							variants={itemVariants}
 							animate={isNavOpen ? "open" : "closed"}
-							className="text-6xl font-bold text-white ">
+							className="text-6xl font-bold text-[#0f8fd4]">
 							Menu
 						</motion.h1>
 						<Link href="/#home">
 							<div
-								className="text-2xl font-bold text-white"
+								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
 								onClick={handleItemClick}>
 								<motion.h2
-									className="text-white"
+									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.1}>
@@ -135,9 +135,9 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 						<Link href="/about">
 							<div
 								onClick={handleItemClick}
-								className="text-2xl font-bold text-white">
+								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer">
 								<motion.h2
-									className="text-white"
+									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.2}>
@@ -148,9 +148,9 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 						<Link href="/projects">
 							<div
 								onClick={handleItemClick}
-								className="text-2xl font-bold text-white">
+								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer">
 								<motion.h2
-									className="text-white"
+									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.3}>
@@ -161,9 +161,9 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 						<Link href="/#contact">
 							<div
 								onClick={handleItemClick}
-								className="text-2xl font-bold text-white">
+								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer">
 								<motion.h2
-									className="text-white"
+									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.4}>
@@ -192,28 +192,28 @@ const Navbar = () => {
 				ref={navRef}
 				className={`navbar px-5 md:px-24 w-screen fixed transition-colors ease duration-500 ${
 					isNavOpen
-						? "backdrop-filter backdrop-blur-md bg-gray-700 bg-opacity-50"
-						: "backdrop-filter backdrop-blur-md"
-				} inset-0  bg-opacity-50 flex flex-row justify-between items-center h-16 z-50 `}>
+						? "backdrop-filter backdrop-blur-sm bg-opacity-90 "
+						: "backdrop-filter backdrop-blur-sm bg-opacity-80 "
+				} inset-0 flex flex-row justify-between items-center h-16 z-50`}>
 				<div>
 					<h1
-						className={`text-2xl ml-2 md:ml-0 transition-colors ease duration-500 ${
-							isNavOpen ? "text-white" : ""
+						className={`text-2xl w-24 ml-2 md:ml-0 transition-colors ease duration-500 ${
+							isNavOpen ? "text-blue-600" : "text-gray-800"
 						}`}>
-						Alvalens
+						<img src="/image/logo.png" alt="Logo" />
 					</h1>
 				</div>
 				<div className="flex flex-row items-center">
 					<button
-						className="burger button flex flex-col justify-center items-center space-y-1.5 "
+						className="burger button flex flex-col justify-center items-center space-y-1.5 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-300"
 						onClick={toggleNav}>
 						<div
-							className={`w-10 h-1 bg-black rounded-full transition-all ease duration-300 ${
-								isNavOpen ? "rotate-45   bg-white translate-y-[2px]" : ""
+							className={`w-8 h-0.5 rounded-full transition-all ease duration-300 ${
+								isNavOpen ? "rotate-45 bg-blue-600 translate-y-[4px]" : "bg-gray-800"
 							}`}></div>
 						<div
-							className={`w-10 h-1 bg-black rounded-full transition-all ease duration-300 ${
-								isNavOpen ? "-rotate-45 -translate-y-2 bg-white" : ""
+							className={`w-8 h-0.5 rounded-full transition-all ease duration-300 ${
+								isNavOpen ? "-rotate-45 -translate-y-1 bg-blue-600" : "bg-gray-800"
 							}`}></div>
 					</button>
 				</div>

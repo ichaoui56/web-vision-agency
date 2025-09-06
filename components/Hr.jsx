@@ -20,7 +20,7 @@ export default function Hr({ variant }) {
 							type: "spring",
 						}}></motion.div>
 					<motion.div
-						className="bg-gray-700 w-28 h-1 rounded-full"
+						className="bg-[#0f8fd4] w-28 h-1 rounded-full"
 						initial={{
 							opacity: 0,
 							x: 200,
@@ -51,7 +51,7 @@ export default function Hr({ variant }) {
 							type: "spring",
 						}}></motion.div>
 					<motion.div
-						className="bg-gray-700 w-20 h-1 rounded-full"
+						className="bg-[#0f8fd4] w-20 h-1 rounded-full"
 						initial={{
 							opacity: 0,
 							x: 150,
