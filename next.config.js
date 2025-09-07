@@ -1,14 +1,18 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
 	enabled: process.env.ANALYZE === "true",
 });
+
+const path = require('path');
+
 module.exports = withBundleAnalyzer({
-	// your Next.js configuration
 	experimental: {
     turbo: {
       resolveAlias: {
-        '@/': './',
-        '@/components': './components',
-        '@/public': './public',
+        '@': path.resolve(__dirname, './'),
+        '@/components': path.resolve(__dirname, './components'),
+        '@/public': path.resolve(__dirname, './public'),
+        '@/app': path.resolve(__dirname, './app'),
+        '@/lib': path.resolve(__dirname, './lib'),
       },
     },
   },
@@ -19,11 +23,20 @@ module.exports = withBundleAnalyzer({
 				hostname: "i.scdn.co",
 			},
 		],
-		// Add image optimization settings
 		formats: ["image/avif", "image/webp"],
 		minimumCacheTTL: 60,
 	},
 	webpack: (config, options) => {
+		// Add path aliases for webpack
+		config.resolve.alias = {
+			...config.resolve.alias,
+			'@': path.resolve(__dirname, './'),
+			'@/components': path.resolve(__dirname, './components'),
+			'@/public': path.resolve(__dirname, './public'),
+			'@/app': path.resolve(__dirname, './app'),
+			'@/lib': path.resolve(__dirname, './lib'),
+		};
+
 		config.module.rules.push({
 			test: /\.pdf$/i,
 			type: "asset/source",
@@ -42,7 +55,7 @@ module.exports = withBundleAnalyzer({
 					},
 					{
 						key: "Cache-Control",
-						value: "public, max-age=3600", // Cache for 1 hour
+						value: "public, max-age=3600",
 					},
 				],
 			},
@@ -65,7 +78,6 @@ module.exports = withBundleAnalyzer({
 			},
 		];
 	},
-	// Add performance optimizations
 	reactStrictMode: true,
 	compiler: {
 		removeConsole:
