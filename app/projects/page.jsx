@@ -27,43 +27,86 @@ const category = {
 
 export default function Page() {
   const [activeCategory, setActiveCategory] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
   const projects = Projects.Projects.filter((item) => item.show === true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
   return (
     <>
       <main className="overflow-hidden">
         <FixedButon href="/#projects">
           <FontAwesomeIcon icon={faChevronLeft} className="text-black pr-10" />
         </FixedButon>
-        <div className="relative h-screen w-screen  gap-4 p-10 flex justify-center items-center flex-col mb-10 overflow-hidden">
-          <div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
-            <motion.div
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.6 }}
-              transition={{ duration: 1, ease: "circOut" }}
-              className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[79vw] md:w-[29vw] grayscale hover:grayscale-0 "
+
+        {/* Hero Section */}
+        <div className="relative h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col mb-10 overflow-hidden">
+          {/* Hero image - only show on desktop */}
+          {!isMobile && (
+            <div className="z-0 mb-48 md:mb-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16">
+              <motion.div
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.6 }}
+                transition={{ duration: 1, ease: "circOut" }}
+                className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[79vw] md:w-[29vw] grayscale hover:grayscale-0"
+              >
+                <Image
+                  src={ProjectAll}
+                  alt="Projects"
+                  layout="fill"
+                  objectFit="cover"
+                  placeholder="blur"
+                />
+              </motion.div>
+            </div>
+          )}
+
+          {/* Content - adjusted positioning for mobile */}
+          <div
+            className={`z-10 w-full ${
+              isMobile
+                ? "relative flex flex-col justify-center items-center text-center h-full"
+                : "absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start"
+            } px-10 pt-4 ${
+              isMobile
+                ? "bg-transparent"
+                : "backdrop-filter backdrop-blur-sm md:backdrop-blur-none md:backdrop-filter-none bg-gray-100 bg-opacity-50 md:bg-transparent"
+            } md:pt-0`}
+          >
+            <h1
+              className={`${
+                isMobile
+                  ? "text-center text-6xl mb-4"
+                  : "md:bg-white bg-transparent lg:bg-transparent bg-opacity-50 md-px-0 text-5xl md:text-8xl"
+              } text-black font-bold`}
             >
-              <Image
-                src={ProjectAll}
-                alt="Alvalens"
-                layout="fill"
-                objectFit="cover"
-                placeholder="blur"
-              />
-            </motion.div>
-          </div>
-          <div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 pt-4 backdrop-filter backdrop-blur-sm md:backdrop-blur-none md:backdrop-filter-none bg-gray-100 bg-opacity-50 md:bg-transparent md:pt-0">
-            <h1 className="md:bg-white bg-transparent lg:bg-transparent bg-opacity-50 md-px-0 text-black text-5xl md:text-8xl font-bold">
               My Projects
             </h1>
             <Hr />
-            <p className="title  text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5">
+            <p
+              className={`title text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5 ${
+                isMobile ? "text-center max-w-md" : ""
+              }`}
+            >
               List of my projects that I have done and <br />
-              <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-                {" "}
+              <span
+                className={`${
+                  isMobile
+                    ? "text-gray-900"
+                    : "bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent"
+                }`}
+              >
                 currently working on.
               </span>
             </p>
@@ -83,16 +126,20 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
+
+        {/* Highlight Section */}
         <div className="mt-10 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
           <div className="flex justify-center items-center flex-col my-5 self-start ">
             <Hr variant="long"></Hr>
-            <h1 className="text-3xl font-bold mt-3">Hightlight</h1>
+            <h1 className="text-3xl font-bold mt-3">Highlight</h1>
           </div>
         </div>
+
+        {/* Portfolio Showcase */}
         <div className="relative w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10">
           <div className="flex justify-center items-start flex-col mb-5 ">
-            <div className="images relative w-full  aspect-square">
-              <div className="absolute top-28 left-10 h-[40%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150 z-10">
+            <div className="images relative w-full aspect-square">
+              <div className="absolute top-28 left-10 h-[40%] aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150 z-10">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5, x: 100 }}
                   whileInView={{
@@ -100,11 +147,12 @@ export default function Page() {
                     scale: 1,
                     x: 0,
                   }}
+                  viewport={{ once: true }}
                   className="w-full h-full shadow-lg"
                 >
                   <Image
                     src={Intervyou1}
-                    alt="Alvalens"
+                    alt="Portfolio Screenshot 1"
                     layout="fill"
                     objectFit="cover"
                     placeholder="blur"
@@ -112,7 +160,7 @@ export default function Page() {
                   />
                 </motion.div>
               </div>
-              <div className="absolute top-10 right-28 h-[30%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
+              <div className="absolute top-10 right-28 h-[30%] aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -125,11 +173,12 @@ export default function Page() {
                     x: 0,
                   }}
                   transition={{ delay: 0.3 }}
+                  viewport={{ once: true }}
                   className="w-full h-full shadow-lg "
                 >
                   <Image
                     src={Intervyou3}
-                    alt="Alvalens"
+                    alt="Portfolio Screenshot 3"
                     layout="fill"
                     objectFit="cover"
                     placeholder="blur"
@@ -137,7 +186,7 @@ export default function Page() {
                   />
                 </motion.div>
               </div>
-              <div className="absolute bottom-10 md:bottom-26 right-20 h-[35%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
+              <div className="absolute bottom-10 md:bottom-26 right-20 h-[35%] aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -152,11 +201,12 @@ export default function Page() {
                   transition={{
                     delay: 0.5,
                   }}
+                  viewport={{ once: true }}
                   className="w-full h-full shadow-lg"
                 >
                   <Image
                     src={Intervyou2}
-                    alt="Alvalens"
+                    alt="Portfolio Screenshot 2"
                     layout="fill"
                     objectFit="cover"
                     placeholder="blur"
@@ -179,6 +229,7 @@ export default function Page() {
               delay: 0.5,
               type: "spring",
             }}
+            viewport={{ once: true }}
           >
             <h2 className="text-2xl font-bold tracking-wider mb-3">
               My Portfolio
@@ -194,7 +245,7 @@ export default function Page() {
               also highlights my work in web development, SEO, social media,
               ads, and AI solutions, serving as both a professional showcase and
               a central hub to connect with me.
-            </p>{" "}
+            </p>
             <div className="mt-3">
               <Button variation="primary">
                 <Link href="projects/portfolio-website">More</Link>
@@ -211,6 +262,8 @@ export default function Page() {
             </div>
           </motion.div>
         </div>
+
+        {/* Other Projects Section */}
         <div className="mt-16 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
           <div className="flex justify-center items-center flex-col my-5 self-start">
             <Hr variant="long"></Hr>
@@ -228,13 +281,14 @@ export default function Page() {
                 delay: 0.7,
                 type: "spring",
               }}
+              viewport={{ once: true }}
             >
               Other Note Worthy Projects
             </motion.h1>
           </div>
         </div>
 
-        {/* choose category */}
+        {/* Category Selection */}
         <motion.div
           initial={{
             opacity: 0,
@@ -247,24 +301,25 @@ export default function Page() {
           transition={{
             type: "spring",
           }}
-          className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 "
+          viewport={{ once: true }}
+          className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5"
         >
           {Object.keys(category).map((key, index) => (
             <button
               key={index}
               className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-gray-300 focus:text-black focus:ring focus:ring-slate-500 ${
-                activeCategory === key
+                activeCategory == key
                   ? "bg-gray-300 text-black hover:bg-gray-700 hover:text-white"
                   : "bg-gray-700 text-white hover:bg-gray-300 hover:text-black"
               }`}
-              onClick={() => setActiveCategory(key)}
+              onClick={() => setActiveCategory(parseInt(key))}
             >
               {category[key]}
             </button>
           ))}
         </motion.div>
 
-        {/* projects */}
+        {/* Projects Grid */}
         <div className="w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10 cursor-pointer">
           {projects.map((project, index) => (
             <ProjectCard
@@ -275,7 +330,7 @@ export default function Page() {
           ))}
         </div>
 
-        {/* view in archive btn */}
+        {/* Archive Button */}
         <motion.div
           initial={{
             opacity: 0,
@@ -283,7 +338,8 @@ export default function Page() {
           whileInView={{
             opacity: 1,
           }}
-          className="flex justify-center items-center flex-col my-5 self-start "
+          viewport={{ once: true }}
+          className="flex justify-center items-center flex-col my-5 self-start"
         >
           <Button variation="primary">
             <Link href="projects/archive">View In Archive</Link>

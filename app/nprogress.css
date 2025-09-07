@@ -82,3 +82,74 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add these mobile-specific navbar fixes to your CSS */
+
+/* iOS Safari specific fixes for navbar */
+@supports (-webkit-touch-callout: none) {
+  .navbar {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Prevent double tap zoom and improve touch response */
+.burger.button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Fix navbar overlay rendering on mobile */
+@media (max-width: 768px) {
+  .navbar {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+  
+  /* Prevent iOS safari bounce effect affecting navbar */
+  body.nav-open {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Smooth animations on mobile */
+  [class*="motion-"] {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Prevent animation lag on iOS */
+  .fixed {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Improve clip-path performance on mobile */
+@media (max-width: 768px) {
+  [style*="clip-path"] {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: clip-path;
+  }
+}
+
+/* Fix double animation issues */
+.navbar-overlay {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
