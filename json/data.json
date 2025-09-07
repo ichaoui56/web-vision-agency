@@ -8,7 +8,7 @@
         "The website features sections such as About Me, Education, Skills, Projects, and Contact, providing a complete overview of my journey as a developer and problem-solver.",
         "It highlights my expertise in web technologies, SEO, digital marketing, and AI solutions, while also serving as a platform for potential clients or employers to connect with me."
       ],
-      "year": "2024",
+      "year": "2023",
       "preview": "https://i-chaoui.vercel.app/",
       
       "thumbnail": "/image/projects/web/portfolio/ichaoui1.png",
@@ -28,33 +28,6 @@
       "slug": "portfolio-website",
       "category": [1]
     },    
-    {
-      "show": false,
-      "title": "Client Personal Protfolio Website",
-      "desc": [
-        "A personal portfolio website that I created for a client. The website is built using two main tech, native (HTML, CSSS, JS) and react based (ReactJs, TailwindCSS, Typescript). The website also created based on the client design, and improved and sliced by me. The website has a few features such as a about page, a project page, resume page, and a contact page.",
-        "The website is created using a modern design and a clean interface that appeals to a wide audience. The website also has a responsive design that makes it easy to use on any device. The website also has a few animations that make the website more interactive and engaging."
-      ],
-      "year": "2025",
-      "preview": "",
-      
-      "thumbnail": "/image/projects/web/apii-portfolio/porto-thumbnail.jpg",
-      "images": [
-        "/image/projects/web/apii-portfolio/porto1.png",
-        "/image/projects/web/apii-portfolio/porto2.png",
-        "/image/projects/web/apii-portfolio/porto3.png"
-      ],
-      "tech": [
-        "HTML",
-        "CSS",
-        "JS",
-        "ReactJS",
-        "TailwindCSS",
-        "Typescript"
-      ], 
-      "slug": "apii-porto",
-      "category": [9]
-    },
     {
       "show": true,
       "title": "Shahine E-commerce Website",
@@ -86,62 +59,6 @@
       "category": [1]
     },    
     {
-      "show": false,
-      "title": "Javanese Translation Website",
-      "desc": [
-        "A Javanese ngoko - krama translation website that I created as a collaborative project with my friends. The website is built using the original Transformer architecture by Vaswani et al. (2017). Built with Python, TensorFlow, Flask, HTML, and CSS, the website allows users to input text in Javanese krama and receive the corresponding ngoko translation.", 
-        "The website is designed to be simple to use, with a clean and modern interface that appeals to a wide audience. Users can input text in Javanese krama and receive the corresponding ngoko translation. The Project also provide ipynb file for the model training and the model itself."
-      ],
-      "year": "2024",
-      "preview": "",
-      
-      "thumbnail": "/image/projects/ai/javanese-translation/javanese-translation-thumbnail.jpg",
-      "images": [
-        "/image/projects/ai/javanese-translation/javanese-translation1.png",
-        "/image/projects/ai/javanese-translation/javanese-translation2.png"
-      ],
-      "tech": [
-        "Transformers",
-        "Python",
-        "Tensorflow",
-        "Flask",
-        "HTML",
-        "CSS"
-      ], 
-      "slug": "javanese-translation",
-      "category": [9]
-    },
-    {
-      "show": false,
-      "title": "SIPETI: Heart Prediction Website",
-      "desc": [
-        "This is a Machine Learning based website that I created as a collage project. The website is built using Decision Tree algorithm and Flask. The website is a heart attack prediction website that can predict whether a person will get a heart attack or not based on their health condition.",
-        "In this website user can predict, customize dataset, customize model, and see the model performance. The website also has a few features such as a dashboard for the user to see the model performance, and a few charts to visualize the decision tree model."
-      ],
-      "year": "2024",
-      "preview": "",
-      
-      "thumbnail": "/image/projects/ai/heart-attack-prediction/heart-attack-prediction-thumbnail.jpg",
-      "images": [
-        "/image/projects/ai/heart-attack-prediction/heart-attack1.png",
-        "/image/projects/ai/heart-attack-prediction/heart-attack2.png",
-        "/image/projects/ai/heart-attack-prediction/heart-attack3.png",
-        "/image/projects/ai/heart-attack-prediction/heart-attack4.png",
-        "/image/projects/ai/heart-attack-prediction/heart-attack5.png"
-      ],
-      "tech": [
-        "Decision Tree",
-        "Python",
-        "Sklearn",
-        "Flask",
-        "HTML",
-        "CSS"
-      ], 
-      "slug": "heart-attack",
-      "category": [9]
-    },
-   
-    {
       "show": true,
       "title": "Olympic Fitness Website",
       "desc": [
@@ -149,7 +66,7 @@
         "The website was developed using Next.js, TypeScript, Tailwind CSS, ShadCN UI, Prisma, and MySQL, providing a modern, responsive, and user-friendly experience.",
         "Key features include a BIM (Body Index Measurement) calculator, a gym schedule, monthly pricing plans, and the ability to select personal trainers. Users can manage their subscriptions, book classes, and track their fitness progress online."
       ],
-      "year": "2025",
+      "year": "2024",
       "preview": "https://olympic-fitness.vercel.app/",
       
       "thumbnail": "/image/projects/web/olympic-fitness/olympic1.png",
@@ -201,7 +118,7 @@
         "The website features a modern, responsive UI and supports functionalities like posting, commenting, voting, and following topics or users, creating an engaging space for fitness communities.",
         "Built with Spring Boot, Angular, and PostgreSQL, RedFit also includes unit testing to ensure reliability and maintainability of the application."
       ],
-      "year": "2025",
+      "year": "2024",
       "thumbnail": "/image/projects/web/gymcommity/gym1.png",
       "images": [
         "/image/projects/web/gymcommity/gym1.png",
@@ -280,30 +197,6 @@
       "category": [1]
     },
     {
-      "show": false,
-      "title": "LUDOang",
-      "desc": [
-        "LUDOang is a game that my team and I created for a final project in my university. The game is built python, pygame, and OpenGL. The game is a 2D game that is inspired by a Ludo game. The game has a few features such randomZone, and a 3D dice.",
-        "RandomZone is a feature that allows the player to get a random number of steps. The 3D dice is a feature that allows the player to roll a 3D dice. The game also has a few other features menuy screen and also loading screen.", "Beside that the game also has a audio theme that will play when the game is started. The game also has a few sound effects such as dice roll sound, and a sound when the player win the game."
-      ],
-      "year": "2023",
-      "preview": "https://github.com/Alvalens/ludo-game/releases/tag/pre-release",
-      
-      "thumbnail": "/image/projects/other/LUDOang/ludo-thumbnail.png",
-      "images": [
-        "/image/projects/other/LUDOang/ludo1.png",
-        "/image/projects/other/LUDOang/ludo2.png",
-        "/image/projects/other/LUDOang/ludo3.png"
-      ],
-      "tech": [
-        "Python",
-        "Pygame",
-        "OpenGL"
-      ], 
-      "slug": "ludoang",
-      "category": [9]
-    },
-    {
       "show": true,
       "title": "Console+ Gaming Platform",
       "desc": [
@@ -331,67 +224,11 @@
       "category": [1]
     },
     {
-      "show": false,
-      "title": "React Realtime Chat",
-      "desc": [
-        "My ambitious project that delves into the world of interactive web development using React. This project is a realtime chat application that allows users to create chat rooms and chat with other users in realtime. The application is built using React, Firebase, and Daisy UI.",
-        "This project is my second react project and my first project using Firebase. I learned a lot about how to use Firebase and how to use React to create a realtime application. I also learned how to use Daisy UI, a CSS framework that is built on top of Tailwind CSS. "
-      ],
-      "year": "2023",
-      "preview": "https://react-chat-rouge.vercel.app",
-      
-      "thumbnail": "/image/projects/web/react-chat/chat-thumbnail.png",
-      "images": [
-        "/image/projects/web/react-chat/chat1.png",
-        "/image/projects/web/react-chat/chat2.png",
-        "/image/projects/web/react-chat/chat3.png",
-        "/image/projects/web/react-chat/chat4.png"
-      ],
-      "tech": [
-        "JavaScript",
-        "React",
-        "React Router",
-        "Firebase",
-        "Daisy UI"
-      ],
-      "slug": "react-chat",
-      "category": [9]
-    },
-    {
-      "show": false,
-      "title": "React Tools",
-      "desc": [
-        "React Tools is a groundbreaking and user-friendly project that brings together a comprehensive collection of tools and components crafted with cutting-edge technologies, including React, React Router, and TailwindCSS. What sets this project apart is that it's not just a suite of powerful features, but it's also a significant milestone as it marks my very first venture into the world of React development.",
-
-        "Unlike traditional web applications, React Tools cleverly utilizes browser local storage, eliminating the need for external databases. This not only ensures seamless performance but also prioritizes user data privacy. ",
-
-        "The Todo List keeps tasks in check with intuitive task management capabilities, ensuring you never miss a beat. The note-taking feature provides a hassle-free way to jot down ideas and crucial information, accessible whenever inspiration strikes. Additionally, our robust expense tracker simplifies financial management by recording and categorizing expenses, delivering insightful spending analysis."
-      ],
-      "year": "2023",
-      "preview": "https://react-tools-flax.vercel.app",
-      
-      "thumbnail": "/image/projects/web/tools/tools-thumbnail.png",
-      "images": [
-        "/image/projects/web/tools/tools.png",
-        "/image/projects/web/tools/tools1.png",
-        "/image/projects/web/tools/tools2.png",
-        "/image/projects/web/tools/tools3.png"
-      ],
-      "tech": [
-        "Javascript",
-        "React",
-        "React Router",
-        "TailwindCSS"
-      ],
-      "slug": "react-tools",
-      "category": [9]
-    },
-    {
       "show": true,
       "title": "Aleph Discord Bot",
       "desc": [
         "Aleph is a Discord bot that I created for my dircord server to use. The bot is built using Python and the discord.py library. The bot has image grabber feauture that takes argument (keywords) and returns an image from the internet.", "Other than that this bot has a few other features such as utility command to delete a messages, and a command to get the server's ping. This bot is still in development and I plan to add more features in the future."],
-      "year": "2023",
+      "year": "2025",
       "preview": "",
       
       "thumbnail": "/image/projects/other/bot/bot-thumbnail.png",
@@ -407,60 +244,6 @@
       "slug": "aleph-discord-bot",
       "category": [3]
     }, 
-    {
-      "show": false,
-      "title": "LPTK Cup 2023 Website",
-      "desc": [
-        "LPTK Cup UM is a website that I created for a competition held by  the Universitas Negeri Malang. The website is mainly built using Laravel and Bootstrap. The website has a few features such as a registration form, a login system, article system, file upload,  and a dashboard for the admin to manage the contents.",
-        "This project is my second freelance project, this project is not as big as my first freelance project but I learned a lot from this project. I learn how to manage a project and how to work with a team."
-      ],
-      "year": "2023",
-      "preview": "",
-      
-      "thumbnail": "/image/projects/web/lptk/lptk1.png",
-      "images": [
-        "/image/projects/web/lptk/lptk1.png",
-        "/image/projects/web/lptk/lptk2.png",
-        "/image/projects/web/lptk/lptk3.png",
-        "/image/projects/web/lptk/lptk4.png"
-      ],
-      "tech": [
-        "PHP",
-        "Laravel",
-        "Bootstrap",
-        "MySQL",
-        "jQuery",
-        "DataTables"
-      ],
-      "slug": "lptk-cup-2023",
-      "category": [9]
-    }, 
-    {
-      "show": false,
-      "title": "NU INO Website",
-      "desc": [
-        "My first freelance project. This project is a website for a School based on a JALAKAR curriculum. The website is built mainly using Laravel and Bootstrap.", "This website is LMS like system, have a user management, user auth, quiz and material for student and FAQ",  "In this project I learned how to work with a team and how to manage a project. I also learned new library such as livewire and alpine.js."],
-      "year": "2023",
-      "preview": "",
-      
-      "thumbnail": "/image/projects/web/ino/ino1.png",
-      "images": [
-        "/image/projects/web/ino/ino1.png",
-        "/image/projects/web/ino/ino2.png",
-        "/image/projects/web/ino/ino3.png"
-      ],
-      "tech": [
-        "PHP",
-        "Laravel",
-        "Bootstrap",
-        "Livewire",
-        "MySQL",
-        "jQuery",
-        "DataTables"
-      ],
-      "slug": "nu-ino-website",
-      "category": [9]
-    },
     {
       "show": true,
       "title": "FashionHub Shopify Store",

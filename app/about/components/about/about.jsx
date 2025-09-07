@@ -11,7 +11,9 @@ function Title() {
     <div className="mt-10 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
       <div className="flex justify-center items-center flex-col my-5 self-start ">
         <Hr variant="long"></Hr>
-        <h1 className="text-3xl font-bold mt-3">Who We Are?</h1>
+        <h1 className="text-3xl font-bold mt-3 bg-gradient-to-r from-black to-[#0f8fd4] bg-clip-text text-transparent">
+          Who We Are?
+        </h1>
       </div>
     </div>
   );
@@ -32,7 +34,7 @@ export default function About() {
                   scale: 1,
                   x: 0,
                 }}
-                className="w-full h-full"
+                className="w-full h-full border-2 border-[#0f8fd4] rounded-lg"
               >
                 <Image
                   src={Me1}
@@ -40,6 +42,7 @@ export default function About() {
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
+                  className="rounded-lg"
                 />
               </motion.div>
             </div>
@@ -56,7 +59,7 @@ export default function About() {
                   x: 0,
                 }}
                 transition={{ delay: 0.3 }}
-                className="w-full h-full"
+                className="w-full h-full border-2 border-black rounded-lg"
               >
                 <Image
                   src={Me2}
@@ -64,6 +67,7 @@ export default function About() {
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
+                  className="rounded-lg"
                 />
               </motion.div>
             </div>
@@ -82,7 +86,7 @@ export default function About() {
                 transition={{
                   delay: 0.5,
                 }}
-                className="w-full h-full"
+                className="w-full h-full border-2 border-[#0f8fd4] rounded-lg"
               >
                 <Image
                   src={Me3}
@@ -90,6 +94,7 @@ export default function About() {
                   layout="fill"
                   objectFit="cover"
                   placeholder="blur"
+                  className="rounded-lg"
                 />
               </motion.div>
             </div>
@@ -107,12 +112,11 @@ export default function About() {
           }}
           transition={{
             delay: 0.5,
-
             type: "spring",
           }}
         >
-          <h2 className="text-2xl font-bold tracking-wider mb-3">
-            Web Vision <hr className="h-1  "/>
+          <h2 className="text-2xl font-bold tracking-wider mb-3 text-black">
+            Web Vision <hr className="h-1 bg-gradient-to-r from-black to-[#0f8fd4] border-0"/>
           </h2>
           <p className="text-gray-600 text-justify title text-lg">
             Welcome to{" "}
@@ -132,13 +136,11 @@ export default function About() {
             , boosting followers, views, and engagement. Beyond digital
             marketing, we build innovative
             <span className="text-[#0f8fd4] font-medium"> AI solutions</span>,
-            crafting intelligent agents tailored to business needs. In today’s
+            crafting intelligent agents tailored to business needs. In today's
             fast-evolving digital era, we believe that creativity, technology,
-            and adaptability are key to lasting success. Let’s shape your
+            and adaptability are key to lasting success. Let's shape your
             digital future together!
           </p>
-
-          {/* <Card /> */}
         </motion.div>
       </div>
     </>

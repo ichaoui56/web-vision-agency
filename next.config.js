@@ -3,6 +3,15 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 module.exports = withBundleAnalyzer({
 	// your Next.js configuration
+	experimental: {
+    turbo: {
+      resolveAlias: {
+        '@/': './',
+        '@/components': './components',
+        '@/public': './public',
+      },
+    },
+  },
 	images: {
 		remotePatterns: [
 			{

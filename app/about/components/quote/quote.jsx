@@ -1,4 +1,3 @@
-// Quote.js
 import "./style.css";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "./useIntersectionObserver";
@@ -37,7 +36,7 @@ export default function Quote() {
 	return (
 		<Wrapper>
 			<div ref={ref} className="text-center">
-				<h3 className="text-[2rem]">
+				<h3 className="text-[2rem] bg-gradient-to-r from-black via-[#0f8fd4] to-black bg-clip-text text-black">
 					{text1.map((word, index) => (
 						<motion.span
 							key={index}
@@ -61,7 +60,7 @@ export default function Quote() {
 						</motion.span>
 					))}
 				</h3>
-				<h3 className="text-xl">
+				<h3 className="text-xl text-gray-700">
 					{text2.map((word, index) => (
 						<motion.span
 							key={index + text1.length}
@@ -82,7 +81,8 @@ export default function Quote() {
 									? (text1.length + index) * 0.1
 									: 0,
 								duration: 0.5,
-							}}>
+							}}
+							className={index % 3 === 0 ? 'text-[#0f8fd4]' : ''}>
 							{word}{" "}
 						</motion.span>
 					))}

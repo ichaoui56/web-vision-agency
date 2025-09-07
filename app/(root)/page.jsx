@@ -1,4 +1,3 @@
-
 "use client";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Image from "next/legacy/image";
@@ -20,6 +19,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 const MyPage = () => {
   const fullpageOptions = {
@@ -269,7 +269,7 @@ const MyPage = () => {
                       type: "spring",
                     }}
                   >
-                    This is some of my projects that I have done{" "} <br />
+                    This is some of my projects that I have done <br />
                     <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
                       {" "}
                       and currently working on.
@@ -291,8 +291,8 @@ const MyPage = () => {
               </div>
             </div>
             <div className="section">
-              <div className="relative md:h-screen w-screen  gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
-                <div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
+              <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
+                <div className="z-0 mb-48 md:mb-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16">
                   <motion.div
                     className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
                     initial={{
@@ -316,14 +316,15 @@ const MyPage = () => {
                       src={Setup}
                       layout="fill"
                       className="object-cover"
-                      alt="Alvalens Setup"
+                      alt="Web Vision Agency Setup"
                       placeholder="blur"
                     />
                   </motion.div>
                 </div>
-                <div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 overflow-hidden">
+
+                <div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 overflow-hidden">
                   <motion.h1
-                    className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold mb-3"
+                    className="bg-white lg:bg-transparent bg-opacity-50 px-3 md:px-0 text-black text-5xl md:text-8xl font-bold mb-3"
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{
@@ -334,6 +335,7 @@ const MyPage = () => {
                     Get In Touch
                   </motion.h1>
                   <Hr />
+
                   <motion.p
                     className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] md:mb-5"
                     initial={{ x: -100, opacity: 0 }}
@@ -343,11 +345,12 @@ const MyPage = () => {
                       type: "spring",
                     }}
                   >
-                    Feel free to contact me if you have any{" "}
+                    Feel free to contact me if you have any{" "} <br/>
                     <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
                       questions or just want to say hi.
                     </span>
                   </motion.p>
+
                   <motion.p
                     className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
                     initial={{ x: -100, opacity: 0 }}
@@ -360,8 +363,28 @@ const MyPage = () => {
                     <a href="mailto:webvisionagency0@gmail.com?subject=Hello&body=Hello WebVisionAgency,">
                       webvisionagency0@gmail.com
                     </a>
+                    <br />
+                    <a href="tel:+212602393795">
+                      +212 6 02 39 37 95
+                    </a>
                   </motion.p>
-                  {/* icons */}
+
+                  {/* Start Project Button */}
+                  <motion.div
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{
+                      delay: 0.4,
+                      type: "spring",
+                    }}
+                    className="mb-6"
+                  >
+                    <Link href="/contact">
+                      <Button variation="primary">Start Your Project</Button>
+                    </Link>
+                  </motion.div>
+
+                  {/* Social Icons */}
                   <div className="flex justify-center items-center space-x-4">
                     <motion.a
                       href="mailto:webvisionagency0@gmail.com?subject=Hello&body=Hello WebVisionAgency,"
@@ -377,7 +400,7 @@ const MyPage = () => {
                     </motion.a>
 
                     <motion.a
-                      href="https://github.com/ichaoui56"
+                      href="https://www.facebook.com/share/19idXTQrfN/?mibextid=wwXIfr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
@@ -388,8 +411,9 @@ const MyPage = () => {
                         opacity: { delay: 0.3 },
                       }}
                     >
-                      <FontAwesomeIcon icon={faGithub} className="text-3xl" />
+                      <FontAwesomeIcon icon={faFacebook} className="text-3xl" />
                     </motion.a>
+
                     <motion.a
                       href="https://www.instagram.com/webvision__agency/"
                       target="_blank"
@@ -407,34 +431,8 @@ const MyPage = () => {
                         className="text-3xl"
                       />
                     </motion.a>
-                    <motion.a
-                      href="https://www.linkedin.com/in/ilyas-chaoui-382234156/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
-                      initial={{ opacity: 0, y: 40 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{
-                        y: { delay: 0.4 },
-                        opacity: { delay: 0.5 },
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faLinkedin} className="text-3xl" />
-                    </motion.a>
-                    <motion.a
-                      href="https://discordapp.com/users/ichaoui56"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
-                      initial={{ opacity: 0, y: 40 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{
-                        y: { delay: 0.5 },
-                        opacity: { delay: 0.6 },
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faDiscord} className="text-3xl" />
-                    </motion.a>
+
+
                   </div>
                 </div>
               </div>

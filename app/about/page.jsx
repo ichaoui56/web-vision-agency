@@ -1,22 +1,20 @@
 "use client";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Button from "@/components/Button";
 import Image from "next/legacy/image";
-import FixedButton from "@/components/FixedButton";
+import FixedButton from "@/components/FixedButton.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import Quote from "./components/quote/quote.jsx";
 import Skills from "./components/skills/skills.jsx";
-import Experience from "./components/experience.jsx";
-import Education from "./components/education.jsx";
 
 // images
 import Hero from "@/public/image/me2.jpg";
 
-import Hr from "@/components/Hr";
+import Hr from "@/components/Hr.jsx";
 import About from "./components/about/about.jsx";
+import Button from "@/components/Button.jsx";
 
 export default function Page() {
 	useEffect(() => {
@@ -29,7 +27,7 @@ export default function Page() {
 				<FixedButton href="/#about">
 					<FontAwesomeIcon
 						icon={faChevronLeft}
-						className="text-black pr-10"
+						className="text-[#0f8fd4] pr-10"
 					/>
 				</FixedButton>
 				<div className="relative h-screen  gap-4 p-10 flex justify-center items-center flex-col mb-10 overflow-hidden">
@@ -39,7 +37,7 @@ export default function Page() {
 							initial={{ scale: 1 }}
 							animate={{ scale: 1.6 }}
 							transition={{ ease: "circOut", duration: 1 }}
-							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
+							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 border-4 border-[#0f8fd4] shadow-lg shadow-[#0f8fd4]/20">
 							<Image
 								src={Hero}
 								alt="Alvalen Shafel"
@@ -56,7 +54,7 @@ export default function Page() {
 						<Hr />
 						<p className="title text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5 ">
 							A brief introduction about me and{" "}
-							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
+							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent text-[#0f8fd4] font-medium">
 								{" "}
 								my interest.
 							</span>
