@@ -1,12 +1,7 @@
-.next
 node_modules
-npm-debug.log
+.next
+.env*
 .git
-.gitignore
 README.md
-.env
-.env.local
-.env.production.local
-.env.development.local
 Dockerfile
 .dockerignore

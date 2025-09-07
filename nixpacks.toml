@@ -1,0 +1,9 @@
+# This file forces Railway to use Dockerfile instead of Nixpacks
+[variables]
+NIXPACKS_BUILDER = "docker"
+
+[phases.setup]
+nixPkgs = []
+
+[phases.install] 
+cmd = 'false'
