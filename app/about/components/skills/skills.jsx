@@ -214,7 +214,7 @@ function ServiceDetails({ selectedService }) {
 			</motion.div>
 
 			{/* Technologies Used */}
-			<motion.div
+			{/* <motion.div
 				className="backdrop-blur-lg bg-gradient-to-br from-[#0f8fd4]/10 to-white/20 border border-black/30 rounded-2xl p-8"
 				initial={{ opacity: 0, x: 50 }}
 				animate={{ opacity: 1, x: 0 }}
@@ -238,7 +238,7 @@ function ServiceDetails({ selectedService }) {
 						</motion.span>
 					))}
 				</div>
-			</motion.div>
+			</motion.div> */}
 		</motion.div>
 	);
 }

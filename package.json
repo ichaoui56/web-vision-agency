@@ -1,12 +1,12 @@
 {
   "name": "web-vision-agency",
   "author": {
-    "name": "Alvalen Shafelbilyunazra",
-    "email": "alvalen.shafel04@gmail.com",
+    "name": "Web Service Agency",
+    "email": "webvisionagency0@gmail.com",
     "url": "http://webvisionagency.ma/"
   },
   "license": "GPL-3.0",
-  "copyright": "Copyright (C) 2025 Alvalen Shafelbilyunazra",
+  "copyright": "Copyright (C) 2025 Web Service Agency",
   "version": "1.0.0",
   "private": true,
   "scripts": {

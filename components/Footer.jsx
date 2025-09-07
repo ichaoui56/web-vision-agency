@@ -9,7 +9,7 @@ export default function Footer() {
 	return (
 		<div className="flex justify-center items-center flex-col mt-5 overflow-hidden">
 			<div className="flex justify-center items-center flex-col mt-5 self-center min-h-[50vh] border-b-2 border-gradient-to-r from-black to-[#0f8fd4] min-w-[80vw] ">
-				<Link href="/#contact">
+				<Link href="/contact">
 					<motion.h2
 						className="text-xl font-medium mt-3 text-center text-gray-400  hover:underline hover:text-[#0f8fd4] whitespace-nowrap leading-none md:tracking-[0.5rem] transition-colors duration-300"
 						initial={{
