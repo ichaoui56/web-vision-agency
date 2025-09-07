@@ -77,7 +77,7 @@ export default function ContactInfo() {
           transition={{ delay: 0.2 }}
           className="text-3xl font-bold bg-gradient-to-r from-black to-[#0f8fd4] bg-clip-text text-transparent"
         >
-          Let's Build Something Amazing Together
+          Let&apos;s Build Something Amazing Together
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export default function ContactInfo() {
         >
           Ready to transform your digital presence? Whether you need a stunning website, 
           effective SEO strategy, social media growth, or innovative AI solutions, 
-          I'm here to bring your vision to life.
+          I&apos;m here to bring your vision to life.
         </motion.p>
       </div>
 

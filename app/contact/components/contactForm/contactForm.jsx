@@ -134,7 +134,7 @@ export default function ContactForm() {
         <h3 className="text-2xl font-bold text-green-800 mb-2">Thank You!</h3>
         <p className="text-green-700 text-center">
           Your project request has been submitted successfully. 
-          We'll get back to you within 24 hours.
+          We&apos;ll get back to you within 24 hours.
         </p>
       </motion.div>
     );
@@ -157,7 +157,7 @@ export default function ContactForm() {
             Start Your Project
           </h2>
           <p className="text-gray-600">
-            Fill out this form and let's discuss how we can help you achieve your goals.
+            Fill out this form and let&apos;s discuss how we can help you achieve your goals.
           </p>
         </div>
 
@@ -355,7 +355,7 @@ export default function ContactForm() {
           >
             <p className="text-sm text-gray-500">
               By submitting this form, you agree to our privacy policy. 
-              We'll never share your information with third parties.
+              We&apos;ll never share your information with third parties.
             </p>
           </motion.div>
         </form>

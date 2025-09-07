@@ -1,4 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "react/jsx-no-duplicate-props": "error",
+    "@next/next/no-img-element": "warn"
+  }
 }
-// TODO: FIX ESLINT ERRORS
