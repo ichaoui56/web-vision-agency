@@ -9,42 +9,52 @@ import Chat from "@/components/Chat";
 import ClientTopProgressBar from "@/components/ClientTopProgressBar";
 
 export const metadata = {
-  title: "Alvalens | Portofolio",
+  title: "Web Vision Agency | Digital Solutions & AI",
 
   description:
-    "My name is Alvalens, I'm a web developer and I'm passionate about it. I'm currently studying at Universitas Negeri Malang.",
+    "Web Vision Agency is a full-service digital agency specializing in website development (custom, WordPress & Shopify), SEO, Ads, Social Media growth, and AI-powered solutions.",
 
-  author: "Alvalen Shafelbilyunazra",
-  siteUrl: "https://www.alvalens.my.id",
-  applicationName: "Alvalens",
+  author: "Web Vision Agency",
+  siteUrl: "http://webvisionagency.ma/",
+  applicationName: "Web Vision Agency",
 
   keywords: [
-    "alvalens",
-    "alvalen",
-    "alvalen shafel",
-    "shafel",
-    "alvalen shafelbilyunazra",
-    "alvalen shafel bilyunazra",
-    "bloodfallen",
-    "alvalen porto",
-    "alvalen um",
+    "web vision agency",
+    "website development",
+    "wordpress agency",
+    "shopify agency",
+    "SEO services",
+    "digital marketing",
+    "social media growth",
+    "ads management",
+    "AI solutions",
+    "AI agents",
+    "Morocco web agency",
   ],
 
   openGraph: {
     type: "website",
-    url: "https://www.alvalens.my.id",
-    title: "Alvalens | Portofolio",
-    site_name: "Alvalens | Portofolio",
-    description: "My name is Alvalens, This is my portofolio website.",
-    width: 1200,
-    height: 630,
+    url: "http://webvisionagency.ma/",
+    title: "Web Vision Agency | Websites • SEO • Ads • AI",
+    site_name: "Web Vision Agency",
+    description:
+      "We build websites, optimize SEO, run Ads, grow Social Media, and develop AI agents for your business success.",
     images: [
       {
         url: "/og-image-rev.png",
-        alt: "Alvalens Portofolio",
+        alt: "Web Vision Agency - Digital Solutions",
+        width: 1200,
+        height: 630,
       },
     ],
-    site_name: "Alvalens | Portofolio",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Vision Agency | Websites • SEO • Ads • AI",
+    description:
+      "Full-service digital agency: Websites, SEO, Ads, Social Media growth & AI-powered solutions.",
+    images: ["/og-image-rev.png"],
   },
 };
 

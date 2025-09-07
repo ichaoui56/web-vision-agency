@@ -1,6 +1,3 @@
-// Copyright (C) 2025 Alvalen Bilyunazra
-// This file is part of Alvalens-porto-2-nextJs.
-// Licensed under the GNU GPL v3.0. See LICENSE for details.
 
 "use client";
 import ReactFullpage from "@fullpage/react-fullpage";
@@ -360,14 +357,14 @@ const MyPage = () => {
                       type: "spring",
                     }}
                   >
-                    <a href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,">
-                      alvalen.shafel04@gmail.com
+                    <a href="mailto:webvisionagency0@gmail.com?subject=Hello&body=Hello WebVisionAgency,">
+                      webvisionagency0@gmail.com
                     </a>
                   </motion.p>
                   {/* icons */}
                   <div className="flex justify-center items-center space-x-4">
                     <motion.a
-                      href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,"
+                      href="mailto:webvisionagency0@gmail.com?subject=Hello&body=Hello WebVisionAgency,"
                       className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
                       initial={{ y: 40, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
@@ -380,7 +377,7 @@ const MyPage = () => {
                     </motion.a>
 
                     <motion.a
-                      href="https://github.com/Alvalens"
+                      href="https://github.com/ichaoui56"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
@@ -394,7 +391,7 @@ const MyPage = () => {
                       <FontAwesomeIcon icon={faGithub} className="text-3xl" />
                     </motion.a>
                     <motion.a
-                      href="https://www.instagram.com/alvalens_/"
+                      href="https://www.instagram.com/webvision__agency/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
@@ -411,7 +408,7 @@ const MyPage = () => {
                       />
                     </motion.a>
                     <motion.a
-                      href="https://www.linkedin.com/in/alvalen-shafel-8a081a254/"
+                      href="https://www.linkedin.com/in/ilyas-chaoui-382234156/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
@@ -425,7 +422,7 @@ const MyPage = () => {
                       <FontAwesomeIcon icon={faLinkedin} className="text-3xl" />
                     </motion.a>
                     <motion.a
-                      href="https://discordapp.com/users/bloody#6118"
+                      href="https://discordapp.com/users/ichaoui56"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
