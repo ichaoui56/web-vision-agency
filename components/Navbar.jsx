@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 	const [isMobile, setIsMobile] = useState(false);
@@ -200,7 +201,13 @@ const Navbar = () => {
 						className={`text-2xl w-24 ml-2 md:ml-0 transition-colors ease duration-500 ${
 							isNavOpen ? "text-blue-600" : "text-gray-800"
 						}`}>
-						<img src="/image/logo.png" alt="Logo" />
+						<Image 
+							src="/image/logo.png" 
+							alt="Logo" 
+							width={96} 
+							height={48}
+							className="w-auto h-auto"
+						/>
 					</h1>
 				</div>
 				<div className="flex flex-row items-center">

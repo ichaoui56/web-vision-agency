@@ -60,10 +60,10 @@ const MyPage = () => {
                     className="text-5xl md:text-6xl py-[10px] lg:text-7xl 2xl:text-8xl font-bold my-2 md:my-5 text-center relative"
                     initial={{ x: 0, opacity: 1 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    transition={{
-                      delay: 0.6,
-                      type: "spring",
-                    }}
+                    // transition={{
+                    //   delay: 0.6,
+                    //   type: "spring",
+                    // }}
                     style={{
                       color: "transparent",
                       WebkitTextStroke: "2px #000",
