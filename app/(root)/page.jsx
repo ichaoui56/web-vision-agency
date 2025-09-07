@@ -1,9 +1,9 @@
 "use client";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Image from "next/legacy/image";
-// import "../globals.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 // components
 import Button from "@/components/Button";
@@ -22,6 +22,19 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 const MyPage = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const fullpageOptions = {
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
@@ -30,11 +43,33 @@ const MyPage = () => {
     lockAnchors: false,
   };
 
+  // Common image animation props with mobile-specific adjustments
+  const imageAnimationProps = {
+    initial: {
+      x: isMobile ? 0 : 300,
+      opacity: 0,
+      scale: 1, // Add explicit scale
+    },
+    whileInView: {
+      x: 0,
+      opacity: 1,
+      scale: 1, // Ensure scale stays consistent
+    },
+    transition: {
+      delay: isMobile ? 0.2 : 0.5, // Faster on mobile
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+    },
+    viewport: { once: true }, // Animate only once
+  };
+
   return (
     <div>
       <ReactFullpage
         render={({ state, fullpageApi }) => (
           <ReactFullpage.Wrapper>
+            {/* Home Section */}
             <div className="section">
               <div className="mx-auto container flex flex-col items-center justify-center p-10 overflow-hidden md:px-20">
                 <motion.div
@@ -60,53 +95,35 @@ const MyPage = () => {
                     className="text-5xl md:text-6xl py-[10px] lg:text-7xl 2xl:text-8xl font-bold my-2 md:my-5 text-center relative"
                     initial={{ x: 0, opacity: 1 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    // transition={{
-                    //   delay: 0.6,
-                    //   type: "spring",
-                    // }}
                     style={{
                       color: "transparent",
                       WebkitTextStroke: "2px #000",
                       textStroke: "2px #000",
                       background: `
-						linear-gradient(
-						90deg,
-						#000 0%,
-						#000 var(--fill-start, 0%),
-						#0f8fd4 var(--fill-start, 0%),
-						#0f8fd4 calc(var(--fill-start, 0%) + 10%),
-						#0f8fd4 calc(var(--fill-start, 0%) + 20%),
-						#0f8fd4 calc(var(--fill-start, 0%) + 30%),
-						#0f8fd4 calc(var(--fill-start, 0%) + 40%),
-						#0f8fd4 calc(var(--fill-start, 0%) + 50%),
-						#0f8fd4 calc(var(--fill-start, 0%) + 60%),
-						#000 calc(var(--fill-start, 0%) + 60%),
-						#000 100%
-						)
-					`,
+                        linear-gradient(
+                        90deg,
+                        #000 0%,
+                        #000 var(--fill-start, 0%),
+                        #0f8fd4 var(--fill-start, 0%),
+                        #0f8fd4 calc(var(--fill-start, 0%) + 10%),
+                        #0f8fd4 calc(var(--fill-start, 0%) + 20%),
+                        #0f8fd4 calc(var(--fill-start, 0%) + 30%),
+                        #0f8fd4 calc(var(--fill-start, 0%) + 40%),
+                        #0f8fd4 calc(var(--fill-start, 0%) + 50%),
+                        #0f8fd4 calc(var(--fill-start, 0%) + 60%),
+                        #000 calc(var(--fill-start, 0%) + 60%),
+                        #000 100%
+                        )
+                      `,
                       WebkitBackgroundClip: "text",
                       backgroundClip: "text",
                       "--fill-start": "0%",
                     }}
                     animate={{
                       "--fill-start": [
-                        "-60%",
-                        "-50%",
-                        "-40%",
-                        "-30%",
-                        "-20%",
-                        "-10%",
-                        "0%",
-                        "10%",
-                        "20%",
-                        "30%",
-                        "40%",
-                        "50%",
-                        "60%",
-                        "70%",
-                        "80%",
-                        "90%",
-                        "100%",
+                        "-60%", "-50%", "-40%", "-30%", "-20%", "-10%",
+                        "0%", "10%", "20%", "30%", "40%", "50%",
+                        "60%", "70%", "80%", "90%", "100%",
                       ],
                     }}
                     transition={{
@@ -146,27 +163,19 @@ const MyPage = () => {
                 </motion.div>
               </div>
             </div>
+
+            {/* About Section */}
             <div className="section">
-              <div className="relative md:h-screen w-screen gap-4 flex justify-center items-center flex-col overflow-hidden">
-                <div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
+              <div className="relative w-screen gap-4 flex justify-center items-center flex-col overflow-hidden min-h-screen">
+                <div className="z-0 mb-48 md:mb-0 md:absolute md:top-1/4 md:right-[10%] md:-translate-y-16">
                   <motion.div
-                    className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
-                    initial={{
-                      x: 300,
-                      opacity: 0,
-                      z: -100,
+                    className="bg-slate-300 rounded-sm grayscale hover:grayscale-0 relative"
+                    style={{
+                      height: isMobile ? '400px' : '600px',
+                      width: isMobile ? '80vw' : '30vw',
+                      maxWidth: isMobile ? '350px' : 'none',
                     }}
-                    whileInView={{
-                      x: 0,
-                      opacity: 1,
-                      z: 0,
-                    }}
-                    transition={{
-                      delay: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20,
-                    }}
+                    {...imageAnimationProps}
                   >
                     <Image
                       src={MeAbout}
@@ -174,30 +183,33 @@ const MyPage = () => {
                       className="object-cover"
                       alt="Alvalens"
                       placeholder="blur"
+                      priority
                     />
                   </motion.div>
                 </div>
-                <div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
+                <div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
                   <motion.h1
-                    className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold"
+                    className="bg-white lg:bg-transparent bg-opacity-50 px-3 md:px-0 text-black text-5xl md:text-8xl font-bold"
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{
                       delay: 0.1,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     About Us
                   </motion.h1>
                   <Hr />
                   <motion.p
-                    className="title  text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+                    className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{
                       delay: 0.2,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     A brief introduction about us and our interest.
                   </motion.p>
@@ -208,6 +220,7 @@ const MyPage = () => {
                       delay: 0.3,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     <Button variation="primary">
                       <Link href="/about">Learn More</Link>
@@ -216,27 +229,19 @@ const MyPage = () => {
                 </div>
               </div>
             </div>
+
+            {/* Projects Section */}
             <div className="section">
-              <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
-                <div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
+              <div className="relative w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden min-h-screen">
+                <div className="z-0 mb-48 md:mb-0 md:absolute md:top-1/4 md:right-[10%] md:-translate-y-16">
                   <motion.div
-                    className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 "
-                    initial={{
-                      x: 300,
-                      opacity: 0,
-                      z: -100,
+                    className="bg-slate-300 rounded-sm grayscale hover:grayscale-0 relative"
+                    style={{
+                      height: isMobile ? '400px' : '600px',
+                      width: isMobile ? '80vw' : '30vw',
+                      maxWidth: isMobile ? '350px' : 'none',
                     }}
-                    whileInView={{
-                      x: 0,
-                      opacity: 1,
-                      z: 0,
-                    }}
-                    transition={{
-                      delay: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20,
-                    }}
+                    {...imageAnimationProps}
                   >
                     <Image
                       src={ProjectAll}
@@ -244,34 +249,36 @@ const MyPage = () => {
                       className="object-cover"
                       alt="Alvalens Setup"
                       placeholder="blur"
+                      priority
                     />
                   </motion.div>
                 </div>
-                <div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
+                <div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
                   <motion.h1
-                    className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold"
+                    className="bg-white lg:bg-transparent bg-opacity-50 px-3 md:px-0 text-black text-5xl md:text-8xl font-bold"
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{
                       delay: 0.1,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     My Projects
                   </motion.h1>
                   <Hr />
                   <motion.p
-                    className="title  text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+                    className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{
                       delay: 0.2,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     This is some of my projects that I have done <br />
                     <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-                      {" "}
                       and currently working on.
                     </span>
                   </motion.p>
@@ -282,6 +289,7 @@ const MyPage = () => {
                       delay: 0.3,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     <Button variation="primary">
                       <Link href="/projects">Learn More</Link>
@@ -290,27 +298,19 @@ const MyPage = () => {
                 </div>
               </div>
             </div>
+
+            {/* Contact Section */}
             <div className="section">
-              <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
-                <div className="z-0 mb-[196px] md:mb-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16">
+              <div className="relative w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden min-h-screen">
+                <div className="z-0 mb-[196px] md:mb-0 md:absolute md:top-1/4 md:right-[10%] md:-translate-y-16">
                   <motion.div
-                    className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
-                    initial={{
-                      x: 300,
-                      opacity: 0,
-                      z: -100,
+                    className="bg-slate-300 rounded-sm grayscale hover:grayscale-0 relative"
+                    style={{
+                      height: isMobile ? '400px' : '600px',
+                      width: isMobile ? '80vw' : '30vw',
+                      maxWidth: isMobile ? '350px' : 'none',
                     }}
-                    whileInView={{
-                      x: 0,
-                      opacity: 1,
-                      z: 0,
-                    }}
-                    transition={{
-                      delay: 0.5,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20,
-                    }}
+                    {...imageAnimationProps}
                   >
                     <Image
                       src={Setup}
@@ -318,6 +318,7 @@ const MyPage = () => {
                       className="object-cover"
                       alt="Web Vision Agency Setup"
                       placeholder="blur"
+                      priority
                     />
                   </motion.div>
                 </div>
@@ -331,6 +332,7 @@ const MyPage = () => {
                       delay: 0.1,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     Get In Touch
                   </motion.h1>
@@ -344,8 +346,9 @@ const MyPage = () => {
                       delay: 0.2,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
-                    Feel free to contact me if you have any{" "} <br/>
+                    Feel free to contact me if you have any <br/>
                     <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
                       questions or just want to say hi.
                     </span>
@@ -359,6 +362,7 @@ const MyPage = () => {
                       delay: 0.3,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                   >
                     <a href="mailto:webvisionagency0@gmail.com?subject=Hello&body=Hello WebVisionAgency,">
                       webvisionagency0@gmail.com
@@ -369,7 +373,6 @@ const MyPage = () => {
                     </a>
                   </motion.p>
 
-                  {/* Start Project Button */}
                   <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -377,6 +380,7 @@ const MyPage = () => {
                       delay: 0.4,
                       type: "spring",
                     }}
+                    viewport={{ once: true }}
                     className="mb-6"
                   >
                     <Link href="/contact">
@@ -384,7 +388,6 @@ const MyPage = () => {
                     </Link>
                   </motion.div>
 
-                  {/* Social Icons */}
                   <div className="flex justify-center items-center space-x-4">
                     <motion.a
                       href="mailto:webvisionagency0@gmail.com?subject=Hello&body=Hello WebVisionAgency,"
@@ -395,6 +398,7 @@ const MyPage = () => {
                         y: { delay: 0.1 },
                         opacity: { delay: 0.2 },
                       }}
+                      viewport={{ once: true }}
                     >
                       <FontAwesomeIcon icon={faEnvelope} className="text-3xl" />
                     </motion.a>
@@ -410,6 +414,7 @@ const MyPage = () => {
                         y: { delay: 0.2 },
                         opacity: { delay: 0.3 },
                       }}
+                      viewport={{ once: true }}
                     >
                       <FontAwesomeIcon icon={faFacebook} className="text-3xl" />
                     </motion.a>
@@ -425,14 +430,10 @@ const MyPage = () => {
                         y: { delay: 0.3 },
                         opacity: { delay: 0.4 },
                       }}
+                      viewport={{ once: true }}
                     >
-                      <FontAwesomeIcon
-                        icon={faInstagram}
-                        className="text-3xl"
-                      />
+                      <FontAwesomeIcon icon={faInstagram} className="text-3xl" />
                     </motion.a>
-
-
                   </div>
                 </div>
               </div>

@@ -101,14 +101,49 @@ a[title]:hover:after {
 	color: #fff;
 }
 
-.burger button {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-}
+/* Add these fixes to your existing CSS */
 
-/* Prevent double-tap zoom on the menu overlay */
-.mobile-nav-overlay {
-    touch-action: pan-y;
-    -webkit-user-select: none;
-    user-select: none;
-}
+/* Mobile Safari viewport fix */
+@supports (-webkit-touch-callout: none) {
+	.section {
+	  height: -webkit-fill-available;
+	  min-height: 100vh;
+	}
+  }
+  
+  /* Prevent layout shifts on mobile */
+  @media (max-width: 768px) {
+	.section {
+	  min-height: 100vh;
+	  min-height: -webkit-fill-available;
+	}
+	
+	/* Force hardware acceleration to prevent layout shifts */
+	.motion-div {
+	  -webkit-transform: translate3d(0, 0, 0);
+	  transform: translate3d(0, 0, 0);
+	  -webkit-backface-visibility: hidden;
+	  backface-visibility: hidden;
+	  -webkit-perspective: 1000px;
+	  perspective: 1000px;
+	}
+	
+	/* Prevent image scaling issues */
+	.image-container {
+	  -webkit-transform: translate3d(0, 0, 0);
+	  transform: translate3d(0, 0, 0);
+	  will-change: transform, opacity;
+	}
+	
+	/* Fixed positioning for mobile */
+	.z-0 {
+	  position: relative !important;
+	}
+	
+	/* Ensure consistent image sizing */
+	.relative img {
+	  width: 100% !important;
+	  height: 100% !important;
+	  object-fit: cover !important;
+	}
+  }
