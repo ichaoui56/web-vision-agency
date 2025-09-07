@@ -2,37 +2,32 @@
   "Projects": [
     {
       "show": true,
-      "title": "Invervyou AI",
+      "title": "Personal Portfolio Website",
       "desc": [
-        "AI Based interview Preparation Website created to help fresh graduates and job seekers prepare for interviews and optimize their CV through AI-powered features. The website is built using Next.js, TypeScript, Tailwind CSS, Shadcn UI, Prisma, and MySQL (TiDB).",
-        "The website has a few features such as a dashboard for the user to see their interview preparation progress, a CV analysis and optimization feature, and a few AI-powered interview questions that can be answered by the user which will be analyzed by the AI to provide feedback. The analysis contains the answer analysis, the gesture analysis, and a material recommendation to improve the user's performance.",
-        "The website also has a token mechanism that allows the user to purchase tokens to access the AI-powered features. Integrated with Indonesian payment gateway (Midtrans) to allow users to purchase tokens easily."
+        "A modern and responsive portfolio website built to showcase my education, skills, and professional background in web development and AI.",
+        "The website features sections such as About Me, Education, Skills, Projects, and Contact, providing a complete overview of my journey as a developer and problem-solver.",
+        "It highlights my expertise in web technologies, SEO, digital marketing, and AI solutions, while also serving as a platform for potential clients or employers to connect with me."
       ],
-      "year": "2025",
-      "preview": "https://www.intervyou.me",
-      "code": "",
-      "thumbnail": "/image/projects/web/intervyou/intervyou-thumbnail.jpg",
+      "year": "2024",
+      "preview": "https://i-chaoui.vercel.app/",
+      
+      "thumbnail": "/image/projects/web/portfolio/ichaoui1.png",
       "images": [
-        "/image/projects/web/intervyou/intervyou-1.png",
-        "/image/projects/web/intervyou/intervyou-2.png",
-        "/image/projects/web/intervyou/intervyou-3.png",
-        "/image/projects/web/intervyou/intervyou-4.png",
-        "/image/projects/web/intervyou/intervyou-5.png"
+        "/image/projects/web/portfolio/ichaoui1.png",
+        "/image/projects/web/portfolio/ichaoui2.png",
+        "/image/projects/web/portfolio/ichaoui3.png"
       ],
       "tech": [
         "NextJS",
         "Typescript",
-        "Shadcn UI",
         "Tailwind CSS",
-        "Prisma",
-        "MySQL",
-        "Midtrans",
-        "Gemini API",
-        "GCP"
-      ], 
-      "slug": "intervyou",
-      "category": [1, 2]
-    },
+        "Shadcn UI",
+        "Framer Motion",
+        "Vercel"
+      ],
+      "slug": "portfolio-website",
+      "category": [1]
+    },    
     {
       "show": false,
       "title": "Client Personal Protfolio Website",
@@ -42,7 +37,7 @@
       ],
       "year": "2025",
       "preview": "",
-      "code": "",
+      
       "thumbnail": "/image/projects/web/apii-portfolio/porto-thumbnail.jpg",
       "images": [
         "/image/projects/web/apii-portfolio/porto1.png",
@@ -58,40 +53,40 @@
         "Typescript"
       ], 
       "slug": "apii-porto",
-      "category": [1]
+      "category": [9]
     },
     {
       "show": true,
-      "title": "Mind Mirror",
+      "title": "Shahine E-commerce Website",
       "desc": [
-        "LMS website that integrated Generative AI feauture to track studnet various keys like mood, behavior, and cognitive ability when learning. The website is built using Laravel as a fullstack framework. In this website teacher can track student mood and other metrics data based on the material students accessed.",
-        "The website also has a few features such as a dashboard for the teacher to see the student's data, a material page, and a quiz page. The website also has a few charts to visualize the student's data. The website provided the student captured data that can be downloaded by the teacher.",
-        "The website also has a features to export the lecture data such as the mood, behaviour, and cognitive score to a xlxs file that can be downloaded by the teacher."
+        "Welcome to the official Shahine website – your online store for women's clothing and accessories based in El Jadida. The site offers a carefully curated selection of items, including pajamas, lingerie, bed covers, towels, sets, baby clothing, burkinis, sandals, and a variety of accessories.",
+        "The website was built using Next.js, Prisma, PostgreSQL, and Tailwind CSS, delivering a modern, responsive, and seamless user experience. It includes product pages, shopping cart functionality, order management, and full e-commerce features to facilitate online shopping.",
+        "Shahine aims to provide an enjoyable shopping experience with high-quality products and friendly service, allowing customers to explore and appreciate everything the store offers, both online and in-store at El Jadida."
       ],
-      "year": "2024",
-      "preview": "",
-      "code": "",
-      "thumbnail": "/image/projects/web/mind-mirror/mind-thumbnail.jpg",
+      "year": "2025",
+      "preview": "https://shahinemaroc.ma",
+      
+      "thumbnail": "/image/projects/web/shahine/shahine1.png",
       "images": [
-        "/image/projects/web/mind-mirror/mind1.png",
-        "/image/projects/web/mind-mirror/mind2.png",
-        "/image/projects/web/mind-mirror/mind3.png",
-        "/image/projects/web/mind-mirror/mind4.png",
-        "/image/projects/web/mind-mirror/mind5.png"
+        "/image/projects/web/shahine/shahine1.png",
+        "/image/projects/web/shahine/shahine2.png",
+        "/image/projects/web/shahine/shahine3.png",
+        "/image/projects/web/shahine/shahine4.png",
+        "/image/projects/web/shahine/shahine5.png"
       ],
       "tech": [
-        "PHP",
-        "Laravel",
-        "Bootstrap",
-        "MySQL",
-        "jQuery",
-        "DataTables"
-      ], 
-      "slug": "mind-mirror",
-      "category": [1, 2]
-    },
+        "NextJS",
+        "Prisma",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "TypeScript",
+        "railway"
+      ],
+      "slug": "shahine-ecommerce",
+      "category": [1]
+    },    
     {
-      "show": true,
+      "show": false,
       "title": "Javanese Translation Website",
       "desc": [
         "A Javanese ngoko - krama translation website that I created as a collaborative project with my friends. The website is built using the original Transformer architecture by Vaswani et al. (2017). Built with Python, TensorFlow, Flask, HTML, and CSS, the website allows users to input text in Javanese krama and receive the corresponding ngoko translation.", 
@@ -99,7 +94,7 @@
       ],
       "year": "2024",
       "preview": "",
-      "code": "https://github.com/ichaoui56",
+      
       "thumbnail": "/image/projects/ai/javanese-translation/javanese-translation-thumbnail.jpg",
       "images": [
         "/image/projects/ai/javanese-translation/javanese-translation1.png",
@@ -114,10 +109,10 @@
         "CSS"
       ], 
       "slug": "javanese-translation",
-      "category": [2]
+      "category": [9]
     },
     {
-      "show": true,
+      "show": false,
       "title": "SIPETI: Heart Prediction Website",
       "desc": [
         "This is a Machine Learning based website that I created as a collage project. The website is built using Decision Tree algorithm and Flask. The website is a heart attack prediction website that can predict whether a person will get a heart attack or not based on their health condition.",
@@ -125,7 +120,7 @@
       ],
       "year": "2024",
       "preview": "",
-      "code": "https://github.com/Alvalens/heart-attack-prediction",
+      
       "thumbnail": "/image/projects/ai/heart-attack-prediction/heart-attack-prediction-thumbnail.jpg",
       "images": [
         "/image/projects/ai/heart-attack-prediction/heart-attack1.png",
@@ -143,48 +138,26 @@
         "CSS"
       ], 
       "slug": "heart-attack",
-      "category": [2]
+      "category": [9]
     },
+   
     {
       "show": true,
-      "title": "Generative Trivia",
+      "title": "Olympic Fitness Website",
       "desc": [
-        "A generative trivia website built with Next.js, Firebase, NextAuth, Google OAuth, and TypeScript. Users can generate trivia questions for predefined school subjects and answer them with a unique interactive input style. The application supports user authentication with Google and stores data in Firestore.",
-        "The project is a culmination of my passion for web development and my desire to create a fun and interactive learning platform. The website is designed to be user-friendly and engaging, with a clean and modern interface that appeals to a wide audience. The trivia questions are generated using the Gemini API, which provides a diverse range of questions for users to answer."
+        "Olympic Fitness is a website built to represent a premier fitness center founded in 2010, aimed at creating a community where everyone can achieve their personal best. The site showcases the gym's facilities, membership options, and services.",
+        "The website was developed using Next.js, TypeScript, Tailwind CSS, ShadCN UI, Prisma, and MySQL, providing a modern, responsive, and user-friendly experience.",
+        "Key features include a BIM (Body Index Measurement) calculator, a gym schedule, monthly pricing plans, and the ability to select personal trainers. Users can manage their subscriptions, book classes, and track their fitness progress online."
       ],
-      "year": "2024",
-      "preview": "https://generative-trivia.vercel.app/",
-      "code": "https://github.com/Alvalens/generative-trivia",
-      "thumbnail": "/image/projects/web/trivia/trivia-thumbnail.png",
+      "year": "2025",
+      "preview": "https://olympic-fitness.vercel.app/",
+      
+      "thumbnail": "/image/projects/web/olympic-fitness/olympic1.png",
       "images": [
-        "/image/projects/web/trivia/trivia1.png",
-        "/image/projects/web/trivia/trivia2.png",
-        "/image/projects/web/trivia/trivia3.png"
-      ],
-      "tech": [
-        "NextJS",
-        "Shadcn UI",
-        "Tailwind CSS",
-        "Firebase",
-        "Gemini API"
-      ], 
-      "slug": "trivia",
-      "category": [1, 2]
-    },
-    {
-      "show": true,
-      "title": "Saku Senyum",
-      "desc": [
-        "Saku Senyum is a website that I created as a Fullstack Developer in PT Hafdzahmedia based on client request. The website is a sales management for UMKM or small business. The website is built using Next.js, TypeScript, Tailwind CSS, ShadCN UI, Prisma, and MySQL.",
-        "The website has a few features such as a dashboard for the user to manage their business sales, a statistic page, and a sales report page. User can see their sales performance in a fancy chart to make it easier to understand. The user also can export their sales report to a PDF file which can be printed or saved to their device."
-      ],
-      "year": "2024",
-      "thumbnail": "/image/projects/web/saku-senyum/saku-senyum-thumbnail.png",
-      "images": [
-        "/image/projects/web/saku-senyum/saku-senyum1.png",
-        "/image/projects/web/saku-senyum/saku-senyum2.png",
-        "/image/projects/web/saku-senyum/saku-senyum3.png",
-        "/image/projects/web/saku-senyum/saku-senyum4.png"
+        "/image/projects/web/olympic-fitness/olympic1.png",
+        "/image/projects/web/olympic-fitness/olympic2.png",
+        "/image/projects/web/olympic-fitness/olympic3.png",
+        "/image/projects/web/olympic-fitness/olympic4.png"
       ],
       "tech": [
         "NextJS",
@@ -193,41 +166,121 @@
         "Tailwind CSS",
         "Prisma",
         "MySQL"
-      ], 
-      "slug": "saku-senyum",
+      ],
+      "slug": "olympic-fitness",
       "category": [1]
     },
     {
       "show": true,
-      "title": "Simadun",
+      "title": "WorkPall Manager Management System",
       "desc": [
-        "Simadun is an Exam Management System developed for doctoral students in the Department of Electrical Engineering and Informatics Universitas Negeri Malang. The system facilitates the management of five different types of examinations, allowing students to apply for exams with ease. Professors and program heads can efficiently oversee the exam processes.",
-        
-        "With Simadun, students can submit their exam applications online, track their application status, and receive timely notifications regarding their exam schedules. Program heads and relevant lecturers have access to comprehensive dashboards where they can manage exam requests, allocate resources, and monitor overall exam logistics. "
+        "WorkPall is a Java-based console application designed as a Manager Management System to streamline the process of adding and reserving spaces for events or facilities.",
+        "The system supports two roles: Admin and Member. Admins can add new spaces, manage users, and oversee reservations, while Members can reserve available spaces, subscribe to events, and receive notifications about their bookings.",
+        "Built with Java Console, Swing, and MySQL, WorkPall provides a reliable and interactive interface for managing reservations, user accounts, and notifications efficiently."
       ],
-      "year": "2024",
-      "thumbnail": "/image/projects/web/simadun/simadun-thumbnail.png",
+      "year": "2025",
+      "thumbnail": "/image/projects/app/workpall/workpall2.png",
       "images": [
-        "/image/projects/web/simadun/simadun1.png",
-        "/image/projects/web/simadun/simadun2.png",
-        "/image/projects/web/simadun/simadun3.png",
-        "/image/projects/web/simadun/simadun4.png",
-        "/image/projects/web/simadun/simadun5.png"
+        "/image/projects/app/workpall/workpall1.png",
+        "/image/projects/app/workpall/workpall2.png",
+        "/image/projects/app/workpall/workpall3.png"
       ],
       "tech": [
-        "PHP",
-        "Laravel",
-        "Bootstrap",
+        "Java Console",
+        "Swing",
+        "MySQL"
+      ],
+      "slug": "workpall",
+      "category": [1]
+    },    
+    {
+      "show": true,
+      "title": "RedFit",
+      "desc": [
+        "RedFit is a community-driven platform for gym enthusiasts, designed as a Reddit-style website where users can share experiences, discuss workouts, and post fitness-related content.",
+        "The website features a modern, responsive UI and supports functionalities like posting, commenting, voting, and following topics or users, creating an engaging space for fitness communities.",
+        "Built with Spring Boot, Angular, and PostgreSQL, RedFit also includes unit testing to ensure reliability and maintainability of the application."
+      ],
+      "year": "2025",
+      "thumbnail": "/image/projects/web/gymcommity/gym1.png",
+      "images": [
+        "/image/projects/web/gymcommity/gym1.png",
+        "/image/projects/web/gymcommity/gym2.png",
+        "/image/projects/web/gymcommity/gym3.png",
+        "/image/projects/web/gymcommity/gym4.png"
+      ],
+      "tech": [
+        "Spring Boot",
+        "Angular",
+        "PostgreSQL",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Unit Testing"
+      ],
+      "slug": "redfit",
+      "category": [1]
+    },    
+    {
+      "show": true,
+      "title": "Gym Tracker App",
+      "desc": [
+        "Gym Tracker App is a comprehensive club management system designed to automate member admission, trainer selection, and scheduling, making fitness programs more accessible and efficient.",
+        "The platform serves three types of users: Administrators, Members, and Trainers. Admins can manage members, trainers, programs, payments, and view feedback. Members can register, manage their profiles, view programs, reserve time slots, make payments, and evaluate trainers. Trainers can manage their profiles, availability, attendance, and track member progress.",
+        "The project enhances the user experience by simplifying admissions, facilitating reservations, and providing effective management tools for all users, ensuring a smooth and interactive fitness experience."
+      ],
+      "year": "2025",
+      "preview": "",
+      "thumbnail": "/image/projects/web/gymtracker/gymT1.png",
+      "images": [
+        "/image/projects/web/gymtracker/gymT1.png",
+        "/image/projects/web/gymtracker/gymT2.png",
+        "/image/projects/web/gymtracker/gymT3.png",
+        "/image/projects/web/gymtracker/gymT4.png",
+        "/image/projects/web/gymtracker/gymT5.png"
+      ],
+      "tech": [
+        "ReactJS",
+        "Tailwind CSS",
+        "Laravel 10",
         "MySQL",
-        "jQuery",
-        "DataTables"
-
-      ], 
-      "slug": "simadun",
+        "HTTPS",
+        "Unit Testing",
+        "Integration Testing"
+      ],
+      "slug": "gym-tracker-app",
+      "category": [1]
+    },    
+    {
+      "show": true,
+      "title": "La Chambre Arbitrale Marocaine du Sport",
+      "desc": [
+        "The CAS website represents the official platform for the 'Chambre Arbitrale du Sport', an independent judicial body under CNOM. Its mission is to resolve sports-related conflicts and disputes efficiently, reducing the need for recourse to ordinary courts.",
+        "The website provides a user-friendly interface where stakeholders can access case information, submit dispute documents, and track proceedings. It also offers resources and guidelines to ensure transparency and effective conflict resolution."
+      ],
+      "year": "2025",
+      "preview": "https://cas.cnomweb.com/fr",
+      "thumbnail": "/image/projects/web/cas/cas1.png",
+      "images": [
+        "/image/projects/web/cas/cas1.png",
+        "/image/projects/web/cas/cas2.png",
+        "/image/projects/web/cas/cas3.png",
+        "/image/projects/web/cas/cas4.png",
+        "/image/projects/web/cas/cas5.png"
+      ],
+      "tech": [
+        "NextJS",
+        "Drizzle",
+        "MySQL",
+        "Tailwind CSS",
+        "TypeScript",
+        "AWS"
+      ],
+      "slug": "cas",
       "category": [1]
     },
     {
-      "show": true,
+      "show": false,
       "title": "LUDOang",
       "desc": [
         "LUDOang is a game that my team and I created for a final project in my university. The game is built python, pygame, and OpenGL. The game is a 2D game that is inspired by a Ludo game. The game has a few features such randomZone, and a 3D dice.",
@@ -235,7 +288,7 @@
       ],
       "year": "2023",
       "preview": "https://github.com/Alvalens/ludo-game/releases/tag/pre-release",
-      "code": "https://github.com/Alvalens/ludo-game",
+      
       "thumbnail": "/image/projects/other/LUDOang/ludo-thumbnail.png",
       "images": [
         "/image/projects/other/LUDOang/ludo1.png",
@@ -252,28 +305,33 @@
     },
     {
       "show": true,
-      "title": "VICC Landing Page",
+      "title": "Console+ Gaming Platform",
       "desc": [
-        "This project is one of my freelance projects. This project is a landing page for Vocational Inter-cultural Camp event held by Vocational Faculty of Universitas Negeri Malang. The website is built using Next.js, Javascript, and Tailwind CSS.", "The website is mainly frontend project, which is already using responsive design. The website has a few features such carousel, and a few animations. The website also has a few pages such as home, topic, and speaker page."
+        "Console+ has been a trusted source for gaming news since its inception in 2010. The platform delivers up-to-the-minute coverage of the gaming world, keeping passionate gamers informed about the latest developments in the industry.",
+        "This website serves as a dynamic hub for video game enthusiasts, providing news, forums, and access to the latest game trailers. Users can read in-depth reviews, participate in discussions, and stay connected with the gaming community.",
+        "Built with Next.js, TypeScript, and Tailwind CSS, Console+ offers a modern, responsive, and interactive experience for gamers of all levels."
       ],
       "year": "2023",
-      "preview": "https://inter-cultural-camp.vercel.app",
-      "thumbnail": "/image/projects/web/vicc/vicc-thumbnail.jpg",
+      "thumbnail": "/image/projects/web/consoleplus/console1.png",
       "images": [
-        "/image/projects/web/vicc/vicc1.png",
-        "/image/projects/web/vicc/vicc2.png",
-        "/image/projects/web/vicc/vicc3.png"
+        "/image/projects/web/consoleplus/console1.png",
+        "/image/projects/web/consoleplus/console2.png",
+        "/image/projects/web/consoleplus/console3.png",
+        "/image/projects/web/consoleplus/console4.png",
+        "/image/projects/web/consoleplus/console5.png"
       ],
       "tech": [
-        "JavaScript",
-        "NextJS",
-        "Tailwind CSS"
+        "React",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "Prisma",
+        "MySQL"
       ],
-      "slug": "vicc",
+      "slug": "consoleplus",
       "category": [1]
     },
     {
-      "show": true,
+      "show": false,
       "title": "React Realtime Chat",
       "desc": [
         "My ambitious project that delves into the world of interactive web development using React. This project is a realtime chat application that allows users to create chat rooms and chat with other users in realtime. The application is built using React, Firebase, and Daisy UI.",
@@ -281,7 +339,7 @@
       ],
       "year": "2023",
       "preview": "https://react-chat-rouge.vercel.app",
-      "code": "https://github.com/Alvalens/react-realtime-chat",
+      
       "thumbnail": "/image/projects/web/react-chat/chat-thumbnail.png",
       "images": [
         "/image/projects/web/react-chat/chat1.png",
@@ -297,10 +355,10 @@
         "Daisy UI"
       ],
       "slug": "react-chat",
-      "category": [1]
+      "category": [9]
     },
     {
-      "show": true,
+      "show": false,
       "title": "React Tools",
       "desc": [
         "React Tools is a groundbreaking and user-friendly project that brings together a comprehensive collection of tools and components crafted with cutting-edge technologies, including React, React Router, and TailwindCSS. What sets this project apart is that it's not just a suite of powerful features, but it's also a significant milestone as it marks my very first venture into the world of React development.",
@@ -311,7 +369,7 @@
       ],
       "year": "2023",
       "preview": "https://react-tools-flax.vercel.app",
-      "code": "https://github.com/Alvalens/react-tools",
+      
       "thumbnail": "/image/projects/web/tools/tools-thumbnail.png",
       "images": [
         "/image/projects/web/tools/tools.png",
@@ -326,7 +384,7 @@
         "TailwindCSS"
       ],
       "slug": "react-tools",
-      "category": [1]
+      "category": [9]
     },
     {
       "show": true,
@@ -335,7 +393,7 @@
         "Aleph is a Discord bot that I created for my dircord server to use. The bot is built using Python and the discord.py library. The bot has image grabber feauture that takes argument (keywords) and returns an image from the internet.", "Other than that this bot has a few other features such as utility command to delete a messages, and a command to get the server's ping. This bot is still in development and I plan to add more features in the future."],
       "year": "2023",
       "preview": "",
-      "code": "https://github.com/Alvalens/aleph-discord-bot",
+      
       "thumbnail": "/image/projects/other/bot/bot-thumbnail.png",
       "images": [
         "/image/projects/other/bot/bot1.png",
@@ -347,10 +405,10 @@
         "Google Serp API"
       ],
       "slug": "aleph-discord-bot",
-      "category": [9]
+      "category": [3]
     }, 
     {
-      "show": true,
+      "show": false,
       "title": "LPTK Cup 2023 Website",
       "desc": [
         "LPTK Cup UM is a website that I created for a competition held by  the Universitas Negeri Malang. The website is mainly built using Laravel and Bootstrap. The website has a few features such as a registration form, a login system, article system, file upload,  and a dashboard for the admin to manage the contents.",
@@ -358,7 +416,7 @@
       ],
       "year": "2023",
       "preview": "",
-      "code": "",
+      
       "thumbnail": "/image/projects/web/lptk/lptk1.png",
       "images": [
         "/image/projects/web/lptk/lptk1.png",
@@ -375,16 +433,16 @@
         "DataTables"
       ],
       "slug": "lptk-cup-2023",
-      "category": [1]
+      "category": [9]
     }, 
     {
-      "show": true,
+      "show": false,
       "title": "NU INO Website",
       "desc": [
         "My first freelance project. This project is a website for a School based on a JALAKAR curriculum. The website is built mainly using Laravel and Bootstrap.", "This website is LMS like system, have a user management, user auth, quiz and material for student and FAQ",  "In this project I learned how to work with a team and how to manage a project. I also learned new library such as livewire and alpine.js."],
       "year": "2023",
       "preview": "",
-      "code": "",
+      
       "thumbnail": "/image/projects/web/ino/ino1.png",
       "images": [
         "/image/projects/web/ino/ino1.png",
@@ -401,7 +459,117 @@
         "DataTables"
       ],
       "slug": "nu-ino-website",
+      "category": [9]
+    },
+    {
+      "show": true,
+      "title": "FashionHub Shopify Store",
+      "desc": [
+        "FashionHub is a modern e-commerce store built on Shopify, offering a wide range of clothing and accessories for men and women. The store provides an intuitive shopping experience with easy navigation, responsive design, and secure checkout.",
+        "Customers can browse products by categories, view detailed product descriptions and images, add items to the cart, and complete purchases with multiple payment options. The store also features promotional banners, featured collections, and seasonal sales to enhance user engagement.",
+        "FashionHub aims to provide a seamless online shopping experience, helping users find stylish and high-quality apparel for all occasions."
+      ],
+      "year": "2025",
+      "preview": "https://ichaoui.myshopify.com",
+      "thumbnail": "/image/projects/shopify/fashionhub/fashionhub1.png",
+      "images": [
+        "/image/projects/shopify/fashionhub/fashionhub1.png",
+        "/image/projects/shopify/fashionhub/fashionhub2.png",
+        "/image/projects/shopify/fashionhub/fashionhub3.png",
+        "/image/projects/shopify/fashionhub/fashionhub4.png"
+      ],
+      "tech": [
+        "Shopify",
+        "Liquid",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive Design"
+      ],
+      "slug": "fashionhub-shopify",
+      "category": [2]
+    },
+    {
+      "show": true,
+      "title": "Generative Trivia",
+      "desc": [
+        "A generative trivia website built with Next.js, Firebase, NextAuth, Google OAuth, and TypeScript. Users can generate trivia questions for predefined school subjects and answer them with a unique interactive input style. The application supports user authentication with Google and stores data in Firestore.",
+        "The project is a culmination of my passion for web development and my desire to create a fun and interactive learning platform. The website is designed to be user-friendly and engaging, with a clean and modern interface that appeals to a wide audience. The trivia questions are generated using the Gemini API, which provides a diverse range of questions for users to answer."
+      ],
+      "year": "2024",
+      "preview": "https://generative-trivia.vercel.app/",
+      
+      "thumbnail": "/image/projects/web/trivia/trivia-thumbnail.png",
+      "images": [
+        "/image/projects/web/trivia/trivia1.png",
+        "/image/projects/web/trivia/trivia2.png",
+        "/image/projects/web/trivia/trivia3.png"
+      ],
+      "tech": [
+        "NextJS",
+        "Shadcn UI",
+        "Tailwind CSS",
+        "Firebase",
+        "Gemini API"
+      ], 
+      "slug": "trivia",
       "category": [1]
+    },    
+    {
+      "show": true,
+      "title": "Curator Shopify Store",
+      "desc": [
+        "Curator is an e-commerce store built on Shopify, offering a curated selection of clothing for women and children. The store focuses on providing high-quality, stylish apparel with an intuitive and engaging shopping experience.",
+        "Users can browse products by categories, view detailed product descriptions and images, add items to the cart, and complete purchases with secure payment options. The store also features promotions, collections, and seasonal sales to enhance customer engagement.",
+        "Curator aims to deliver a seamless online shopping experience for families, helping customers find fashionable and comfortable clothing for women and children."
+      ],
+      "year": "2025",
+      "preview": "https://ap-curator.myshopify.com/",
+      "thumbnail": "/image/projects/shopify/curator/curator1.png",
+      "images": [
+        "/image/projects/shopify/curator/curator1.png",
+        "/image/projects/shopify/curator/curator2.png",
+        "/image/projects/shopify/curator/curator3.png",
+        "/image/projects/shopify/curator/curator4.png"
+      ],
+      "tech": [
+        "Shopify",
+        "Liquid",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive Design"
+      ],
+      "slug": "curator-shopify",
+      "category": [2]
+    },
+    {
+      "show": true,
+      "title": "Memory Game",
+      "desc": [
+        "Memory Game is a web application built using Angular where players test their memory by replicating sequences of colors. The game increases in difficulty with each level as the sequences grow longer, providing a fun and challenging experience.",
+        "The application features smooth animations, real-time score tracking, and responsive gameplay, making it accessible on both desktop and mobile devices.",
+        "Built with Angular, the game emphasizes interactive UI and a seamless user experience, perfect for users looking to sharpen their memory skills while having fun."
+      ],
+      "year": "2025",
+      "preview": "https://memory-game-git-main-ichaoui56s-projects.vercel.app/",
+      "thumbnail": "/image/projects/app/memorygame/memorygame1.png",
+      "images": [
+        "/image/projects/app/memorygame/memorygame1.png",
+        "/image/projects/app/memorygame/memorygame2.png",
+        "/image/projects/app/memorygame/memorygame3.png"
+      ],
+      "tech": [
+        "Angular",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Responsive Design"
+      ],
+      "slug": "memorygame",
+      "category": [9]
     }
+    
+  
   ]
 }

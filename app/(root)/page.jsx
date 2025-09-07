@@ -269,7 +269,7 @@ const MyPage = () => {
                       type: "spring",
                     }}
                   >
-                    This is some of my projects that I have done{" "}
+                    This is some of my projects that I have done{" "} <br />
                     <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
                       {" "}
                       and currently working on.
