@@ -100,3 +100,15 @@ a[title]:hover:after {
 	background: #333333;
 	color: #fff;
 }
+
+.burger button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* Prevent double-tap zoom on the menu overlay */
+.mobile-nav-overlay {
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+}
