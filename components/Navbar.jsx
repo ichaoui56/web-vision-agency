@@ -7,9 +7,12 @@ import Image from "next/image";
 const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 	const [isMobile, setIsMobile] = useState(false);
 
-	const handleItemClick = () => {
+	const handleItemClick = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
 		setIsNavOpen(false);
 	};
+
 	const navVariant = {
 		open: {
 			clipPath: `circle(1920px at calc(100% - 40px) 40px)`,
@@ -29,57 +32,31 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 			},
 		},
 	};
+
 	useEffect(() => {
 		const updateScreenWidth = () => {
 			setIsMobile(window.innerWidth <= 768);
 		};
 
-		// Initial check and event listener
 		updateScreenWidth();
 		window.addEventListener("resize", updateScreenWidth);
 
-		// Clean up the event listener on unmount
 		return () => {
 			window.removeEventListener("resize", updateScreenWidth);
 		};
 	}, []);
 
-	// Check screen width and adjust clipPath for smaller screens
-	if (isMobile) {
-		(navVariant.open = {
-			clipPath: `circle(1920px at calc(100% - 40px) 40px)`,
-			transition: {
-				type: "tween",
-			},
-		}),
-			(navVariant.closed = {
-				clipPath: "circle(0px at calc(100% - 35px) 35px)",
-				transition: {
-					delay: 0.5,
-					type: "spring",
-					stiffness: 400,
-					damping: 40,
-				},
-			});
-	} else {
-		(navVariant.open = {
-			clipPath: `circle(2444px at calc(100% - 40px) 40px)`,
-			transition: {
-				type: "spring",
-				stiffness: 400,
-				damping: 40,
-			},
-		}),
-			(navVariant.closed = {
-				clipPath: "circle(0px at calc(100% - 120px) 35px)",
-				transition: {
-					delay: 0.5,
-					type: "spring",
-					stiffness: 400,
-					damping: 40,
-				},
-			});
-	}
+	// Update navVariant based on screen size
+	useEffect(() => {
+		if (isMobile) {
+			navVariant.open.clipPath = `circle(1920px at calc(100% - 40px) 40px)`;
+			navVariant.closed.clipPath = "circle(0px at calc(100% - 35px) 35px)";
+		} else {
+			navVariant.open.clipPath = `circle(2444px at calc(100% - 40px) 40px)`;
+			navVariant.closed.clipPath = "circle(0px at calc(100% - 120px) 35px)";
+		}
+	}, [isMobile]);
+
 	const itemVariants = {
 		open: (custom) => ({
 			opacity: 1,
@@ -105,77 +82,62 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 	};
 
 	return (
-		<>
-			<motion.div
-				className={`fixed z-[45] w-full h-screen flex items-center justify-center backdrop-blur-sm transition-all ease duration-700 overflow-hidden`}
-				variants={navVariant}
-				animate={isNavOpen ? "open" : "closed"}
-				initial={false}>
-				<div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-white min-w-[100vw] shadow-2xl">
-					<div className="flex flex-col items-center space-y-8 my-auto mx-0 z-50">
-						{/* title */}
-						<motion.h1
+		<motion.div
+			className="fixed z-[45] w-full h-screen flex items-center justify-center backdrop-blur-sm transition-all ease duration-700 overflow-hidden"
+			variants={navVariant}
+			animate={isNavOpen ? "open" : "closed"}
+			initial={false}>
+			<div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-white min-w-[100vw] shadow-2xl">
+				<div className="flex flex-col items-center space-y-8 my-auto mx-0 z-50">
+					<motion.h1
+						variants={itemVariants}
+						animate={isNavOpen ? "open" : "closed"}
+						className="text-6xl font-bold text-[#0f8fd4]">
+						Menu
+					</motion.h1>
+					
+					<Link href="/#home" onClick={handleItemClick}>
+						<motion.h2
+							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
 							variants={itemVariants}
 							animate={isNavOpen ? "open" : "closed"}
-							className="text-6xl font-bold text-[#0f8fd4]">
-							Menu
-						</motion.h1>
-						<Link href="/#home">
-							<div
-								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
-								onClick={handleItemClick}>
-								<motion.h2
-									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.1}>
-									Home
-								</motion.h2>
-							</div>
-						</Link>
-						<Link href="/about">
-							<div
-								onClick={handleItemClick}
-								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer">
-								<motion.h2
-									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.2}>
-									About
-								</motion.h2>
-							</div>
-						</Link>
-						<Link href="/projects">
-							<div
-								onClick={handleItemClick}
-								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer">
-								<motion.h2
-									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.3}>
-									Projects
-								</motion.h2>
-							</div>
-						</Link>
-						<Link href="/#contact">
-							<div
-								onClick={handleItemClick}
-								className="text-2xl font-bold text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer">
-								<motion.h2
-									className="text-gray-800 hover:text-[#0f8fd4] transition-colors duration-300"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.4}>
-									Contact
-								</motion.h2>
-							</div>
-						</Link>
-					</div>
+							custom={0.1}>
+							Home
+						</motion.h2>
+					</Link>
+
+					<Link href="/about" onClick={handleItemClick}>
+						<motion.h2
+							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
+							variants={itemVariants}
+							animate={isNavOpen ? "open" : "closed"}
+							custom={0.2}>
+							About
+						</motion.h2>
+					</Link>
+
+					<Link href="/projects" onClick={handleItemClick}>
+						<motion.h2
+							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
+							variants={itemVariants}
+							animate={isNavOpen ? "open" : "closed"}
+							custom={0.3}>
+							Projects
+						</motion.h2>
+					</Link>
+
+					<Link href="/#contact" onClick={handleItemClick}>
+						<motion.h2
+							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
+							variants={itemVariants}
+							animate={isNavOpen ? "open" : "closed"}
+							custom={0.4}>
+							Contact
+						</motion.h2>
+					</Link>
 				</div>
-			</motion.div>
-		</>
+			</div>
+		</motion.div>
 	);
 };
 
@@ -183,9 +145,30 @@ const Navbar = () => {
 	const navRef = useRef(null);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
-	const toggleNav = () => {
-		setIsNavOpen(!isNavOpen);
+	const toggleNav = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		setIsNavOpen(prev => !prev);
 	};
+
+	// Close menu when clicking outside
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (navRef.current && !navRef.current.contains(event.target) && isNavOpen) {
+				setIsNavOpen(false);
+			}
+		};
+
+		if (isNavOpen) {
+			document.addEventListener('mousedown', handleClickOutside);
+			document.addEventListener('touchstart', handleClickOutside);
+		}
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+			document.removeEventListener('touchstart', handleClickOutside);
+		};
+	}, [isNavOpen]);
 
 	return (
 		<>
@@ -193,8 +176,8 @@ const Navbar = () => {
 				ref={navRef}
 				className={`navbar px-5 md:px-24 w-screen fixed bg-white md:bg-transparent transition-colors ease duration-500 ${
 					isNavOpen
-						? "backdrop-filter backdrop-blur-sm bg-opacity-90 "
-						: "backdrop-filter backdrop-blur-sm bg-opacity-80 "
+						? "backdrop-filter backdrop-blur-sm bg-opacity-90"
+						: "backdrop-filter backdrop-blur-sm bg-opacity-80"
 				} inset-0 flex flex-row justify-between items-center h-16 z-50`}>
 				<div>
 					<h1
@@ -212,8 +195,9 @@ const Navbar = () => {
 				</div>
 				<div className="flex flex-row items-center">
 					<button
-						className="burger button flex flex-col justify-center items-center space-y-1.5 p-4 rounded-lg hover:bg-gray-100 transition-colors duration-300"
-						onClick={toggleNav}>
+						className="burger button flex flex-col justify-center items-center space-y-1.5 p-4 rounded-lg active:bg-gray-200 md:hover:bg-gray-100 transition-colors duration-300"
+						onClick={toggleNav}
+						onTouchEnd={(e) => e.preventDefault()}>
 						<div
 							className={`w-8 h-0.5 rounded-full transition-all ease duration-300 ${
 								isNavOpen ? "rotate-45 bg-blue-600 translate-y-[4px]" : "bg-gray-800"
@@ -225,9 +209,9 @@ const Navbar = () => {
 					</button>
 				</div>
 			</nav>
-			{/* items */}
 			<NavItems isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 		</>
 	);
 };
+
 export default Navbar;

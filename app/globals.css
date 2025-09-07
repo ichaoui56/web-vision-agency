@@ -100,3 +100,8 @@ a[title]:hover:after {
 	background: #333333;
 	color: #fff;
 }
+
+.burger {
+	touch-action: manipulation;
+	user-select: none;
+  }
