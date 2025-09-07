@@ -196,8 +196,7 @@ const Navbar = () => {
 				<div className="flex flex-row items-center">
 					<button
 						className="burger button flex flex-col justify-center items-center space-y-1.5 p-4 rounded-lg active:bg-gray-200 md:hover:bg-gray-100 transition-colors duration-300"
-						onClick={toggleNav}
-						onTouchEnd={(e) => e.preventDefault()}>
+						onClick={toggleNav}>
 						<div
 							className={`w-8 h-0.5 rounded-full transition-all ease duration-300 ${
 								isNavOpen ? "rotate-45 bg-blue-600 translate-y-[4px]" : "bg-gray-800"
