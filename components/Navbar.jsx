@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,31 +7,9 @@ import Image from "next/image";
 const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 	const [isMobile, setIsMobile] = useState(false);
 
-	const handleItemClick = (e) => {
-		e.preventDefault();
-		e.stopPropagation();
+	const handleItemClick = useCallback(() => {
 		setIsNavOpen(false);
-	};
-
-	const navVariant = {
-		open: {
-			clipPath: `circle(1920px at calc(100% - 40px) 40px)`,
-			transition: {
-				type: "spring",
-				stiffness: 400,
-				damping: 40,
-			},
-		},
-		closed: {
-			clipPath: "circle(0px at calc(100% - 120px) 35px)",
-			transition: {
-				delay: 0.5,
-				type: "spring",
-				stiffness: 400,
-				damping: 30,
-			},
-		},
-	};
+	}, [setIsNavOpen]);
 
 	useEffect(() => {
 		const updateScreenWidth = () => {
@@ -46,16 +24,29 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 		};
 	}, []);
 
-	// Update navVariant based on screen size
-	useEffect(() => {
-		if (isMobile) {
-			navVariant.open.clipPath = `circle(1920px at calc(100% - 40px) 40px)`;
-			navVariant.closed.clipPath = "circle(0px at calc(100% - 35px) 35px)";
-		} else {
-			navVariant.open.clipPath = `circle(2444px at calc(100% - 40px) 40px)`;
-			navVariant.closed.clipPath = "circle(0px at calc(100% - 120px) 35px)";
-		}
-	}, [isMobile]);
+	const navVariant = {
+		open: {
+			clipPath: isMobile 
+				? `circle(1920px at calc(100% - 40px) 40px)` 
+				: `circle(2444px at calc(100% - 40px) 40px)`,
+			transition: {
+				type: "spring",
+				stiffness: 400,
+				damping: 40,
+			},
+		},
+		closed: {
+			clipPath: isMobile 
+				? "circle(0px at calc(100% - 35px) 35px)" 
+				: "circle(0px at calc(100% - 120px) 35px)",
+			transition: {
+				delay: 0.5,
+				type: "spring",
+				stiffness: 400,
+				damping: 40,
+			},
+		},
+	};
 
 	const itemVariants = {
 		open: (custom) => ({
@@ -81,56 +72,68 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 		},
 	};
 
+	if (!isNavOpen) return null;
+
 	return (
 		<motion.div
 			className="fixed z-[45] w-full h-screen flex items-center justify-center backdrop-blur-sm transition-all ease duration-700 overflow-hidden"
 			variants={navVariant}
-			animate={isNavOpen ? "open" : "closed"}
-			initial={false}>
+			animate="open"
+			initial="closed"
+			exit="closed">
 			<div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-white min-w-[100vw] shadow-2xl">
 				<div className="flex flex-col items-center space-y-8 my-auto mx-0 z-50">
 					<motion.h1
 						variants={itemVariants}
-						animate={isNavOpen ? "open" : "closed"}
+						animate="open"
+						initial="closed"
 						className="text-6xl font-bold text-[#0f8fd4]">
 						Menu
 					</motion.h1>
 					
-					<Link href="/#home" onClick={handleItemClick}>
+					<Link href="/#home">
 						<motion.h2
+							onClick={handleItemClick}
 							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
 							variants={itemVariants}
-							animate={isNavOpen ? "open" : "closed"}
+							animate="open"
+							initial="closed"
 							custom={0.1}>
 							Home
 						</motion.h2>
 					</Link>
 
-					<Link href="/about" onClick={handleItemClick}>
+					<Link href="/about">
 						<motion.h2
+							onClick={handleItemClick}
 							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
 							variants={itemVariants}
-							animate={isNavOpen ? "open" : "closed"}
+							animate="open"
+							initial="closed"
 							custom={0.2}>
 							About
 						</motion.h2>
 					</Link>
 
-					<Link href="/projects" onClick={handleItemClick}>
+					<Link href="/projects">
 						<motion.h2
+							onClick={handleItemClick}
 							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
 							variants={itemVariants}
-							animate={isNavOpen ? "open" : "closed"}
+							animate="open"
+							initial="closed"
 							custom={0.3}>
 							Projects
 						</motion.h2>
 					</Link>
 
-					<Link href="/#contact" onClick={handleItemClick}>
+					<Link href="/#contact">
 						<motion.h2
+							onClick={handleItemClick}
 							className="text-2xl font-bold text-gray-800 active:text-[#0f8fd4] md:hover:text-[#0f8fd4] transition-colors duration-300 cursor-pointer"
 							variants={itemVariants}
-							animate={isNavOpen ? "open" : "closed"}
+							animate="open"
+							initial="closed"
 							custom={0.4}>
 							Contact
 						</motion.h2>
@@ -144,12 +147,19 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 const Navbar = () => {
 	const navRef = useRef(null);
 	const [isNavOpen, setIsNavOpen] = useState(false);
+	const [isToggling, setIsToggling] = useState(false);
 
-	const toggleNav = (e) => {
-		e.preventDefault();
-		e.stopPropagation();
+	const toggleNav = useCallback(() => {
+		if (isToggling) return; // Prevent multiple rapid clicks
+		
+		setIsToggling(true);
 		setIsNavOpen(prev => !prev);
-	};
+		
+		// Reset the toggle lock after animation
+		setTimeout(() => {
+			setIsToggling(false);
+		}, 300);
+	}, [isToggling]);
 
 	// Close menu when clicking outside
 	useEffect(() => {
@@ -161,12 +171,25 @@ const Navbar = () => {
 
 		if (isNavOpen) {
 			document.addEventListener('mousedown', handleClickOutside);
-			document.addEventListener('touchstart', handleClickOutside);
+			document.addEventListener('touchstart', handleClickOutside, { passive: true });
 		}
 
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside);
 			document.removeEventListener('touchstart', handleClickOutside);
+		};
+	}, [isNavOpen]);
+
+	// Prevent body scroll when menu is open
+	useEffect(() => {
+		if (isNavOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'unset';
+		}
+
+		return () => {
+			document.body.style.overflow = 'unset';
 		};
 	}, [isNavOpen]);
 
@@ -195,8 +218,11 @@ const Navbar = () => {
 				</div>
 				<div className="flex flex-row items-center">
 					<button
-						className="burger button flex flex-col justify-center items-center space-y-1.5 p-4 rounded-lg active:bg-gray-200 md:hover:bg-gray-100 transition-colors duration-300"
-						onClick={toggleNav}>
+						type="button"
+						className="burger button flex flex-col justify-center items-center space-y-1.5 p-4 rounded-lg active:bg-gray-200 md:hover:bg-gray-100 transition-colors duration-300 touch-manipulation"
+						onClick={toggleNav}
+						disabled={isToggling}
+						style={{ touchAction: 'manipulation' }}>
 						<div
 							className={`w-8 h-0.5 rounded-full transition-all ease duration-300 ${
 								isNavOpen ? "rotate-45 bg-blue-600 translate-y-[4px]" : "bg-gray-800"
