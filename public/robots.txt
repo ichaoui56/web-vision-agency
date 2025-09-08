@@ -1,4 +1,143 @@
+# public/robots.txt - Enhanced Robots.txt
+/*
+# Enhanced robots.txt for Web Vision Agency
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://www.webvisionagency.ma/sitemap2.xml
+# Block unnecessary crawling
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*utm_source
+Disallow: /*?*utm_medium  
+Disallow: /*?*utm_campaign
+Disallow: /*?*utm_term
+Disallow: /*?*utm_content
+Disallow: /*?*gclid
+Disallow: /*?*fbclid
+
+# Allow important resources
+Allow: /_next/static/
+Allow: /images/
+Allow: /favicon.ico
+Allow: /sitemap.xml
+Allow: /sitemap.xml.gz
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 3
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Block problematic bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap locations
+Sitemap: https://webvisionagency.ma/sitemap.xml
+Sitemap: https://webvisionagency.ma/sitemap.xml.gz
+
+# Host preference
+Host: webvisionagency.ma
+*/
+
+// ===================================================================
+
+// app/sitemap.js - Next.js 13+ App Router Sitemap
+export default async function sitemap() {
+  const baseUrl = "https://webvisionagency.ma";
+  const currentDate = new Date().toISOString();
+  
+  // Import projects data dynamically
+  const projectsData = await import("../json/data.json");
+  
+  // Static routes
+  const staticRoutes = [
+    {
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/contact`, 
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/projects/archive`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly', 
+      priority: 0.7,
+    },
+  ];
+
+  // Dynamic project routes
+  const projectRoutes = projectsData.default.Projects
+    .filter(project => project.show)
+    .map(project => ({
+      url: `${baseUrl}/projects/${project.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }));
+
+  return [...staticRoutes, ...projectRoutes];
+}
+
+// ===================================================================
+
+// package.json scripts addition
+/*
+Add these scripts to your package.json:
+
+ "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate-sitemap": "node generate-sitemap.js",
+    "ily": "rm -rf .next && next build && next start"
+  }
+*/

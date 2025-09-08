@@ -11,10 +11,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "pnpm build:sitemap && next build",
+    "build:sitemap": "node scripts/sitemap-generator.js",
     "start": "next start",
     "lint": "next lint",
-    "generate-sitemap": "node generate-sitemap.js"
+    "generate-sitemap": "node generate-sitemap.js",
+    "ily": "rm -rf .next && next build && next start",
+    "seo:audit": "node scripts/seo-audit.js",
+    "seo:monitor": "node scripts/seo-monitor.js",
+    "seo:checklist": "node scripts/seo-checklist.js",
+    "seo:rank-track": "node scripts/rank-tracking.js",
+    "lighthouse": "lighthouse https://webvisionagency.ma --output=html --output-path=./reports/lighthouse.html --chrome-flags=\"--headless\"",
+    "lighthouse:ci": "lhci autorun",
+    "analyze": "cross-env ANALYZE=true pnpm build",
+    "performance": "pnpm lighthouse && pnpm seo:audit",
+    "seo:full": "pnpm seo:audit && pnpm seo:monitor && pnpm lighthouse"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -25,13 +36,16 @@
     "@fullpage/react-fullpage": "^0.1.48",
     "@tailwindcss/postcss": "^4.0.14",
     "@vercel/analytics": "^1.5.0",
+    "cheerio": "^1.0.0-rc.12",
     "eslint": "9.22.0",
     "eslint-config-next": "15.2.3",
     "framer-motion": "^12.5.0",
+    "lighthouse": "^12.2.1",
     "next": "15.2.3",
     "nprogress": "^0.2.0",
     "postcss": "^8.5.3",
     "prop-types": "^15.8.1",
+    "puppeteer": "^23.10.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "sharp": "^0.33.5",
@@ -40,8 +54,29 @@
     "tailwindcss": "^4.0.14"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.14.0",
     "@next/bundle-analyzer": "15.2.3",
     "@types/react": "19.1.5",
     "cross-env": "^7.0.3"
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "web-development",
+    "seo",
+    "digital-marketing",
+    "morocco",
+    "casablanca",
+    "ai-solutions",
+    "next.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webvisionagency/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webvisionagency/website/issues"
+  },
+  "homepage": "https://webvisionagency.ma"
 }
