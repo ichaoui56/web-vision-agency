@@ -6,7 +6,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import FixedButon from "@/components/FixedButton";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import Projects from "@/json/data.json";
+import Projects from "@/scripts/json/data.json";
 import Link from "next/link";
 
 export default function Page() {

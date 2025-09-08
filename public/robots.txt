@@ -77,7 +77,7 @@ export default async function sitemap() {
   const currentDate = new Date().toISOString();
   
   // Import projects data dynamically
-  const projectsData = await import("../json/data.json");
+  const projectsData = await import("../scripts/json/data.json");
   
   // Static routes
   const staticRoutes = [

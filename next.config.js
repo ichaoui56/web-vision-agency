@@ -6,7 +6,10 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const path = require('path');
 
 module.exports = withBundleAnalyzer({
+  // Consolidated experimental features
   experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['@fortawesome/react-fontawesome'],
     turbo: {
       resolveAlias: {
         '@': path.resolve(__dirname, './'),
@@ -14,6 +17,7 @@ module.exports = withBundleAnalyzer({
         '@/public': path.resolve(__dirname, './public'),
         '@/app': path.resolve(__dirname, './app'),
         '@/lib': path.resolve(__dirname, './lib'),
+        '@/json': path.resolve(__dirname, './json'),
       },
     },
   },
@@ -179,6 +183,7 @@ module.exports = withBundleAnalyzer({
       '@/public': path.resolve(__dirname, './public'),
       '@/app': path.resolve(__dirname, './app'),
       '@/lib': path.resolve(__dirname, './lib'),
+      '@/json': path.resolve(__dirname, './json'),
     };
 
     // Handle PDF files
@@ -200,14 +205,7 @@ module.exports = withBundleAnalyzer({
     return config;
   },
 
-  // Enable experimental features for better SEO
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['@fortawesome/react-fontawesome'],
-  },
-
-  // Enhanced build optimization
-  swcMinify: true,
+  // Enhanced build optimization - swcMinify removed (enabled by default in Next.js 15)
   reactStrictMode: true,
   poweredByHeader: false,
   generateEtags: true,

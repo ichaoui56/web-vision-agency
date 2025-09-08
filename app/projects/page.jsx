@@ -13,7 +13,7 @@ import ProjectAll from "@/public/image/projects.png";
 
 import Hr from "@/components/Hr";
 import ProjectCard from "./components/ProjectCard";
-import Projects from "@/json/data.json";
+import Projects from "@/scripts/json/data.json";
 import FixedButon from "@/components/FixedButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
