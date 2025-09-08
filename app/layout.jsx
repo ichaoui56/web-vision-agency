@@ -41,7 +41,7 @@ export const metadata = {
       "We build websites, optimize SEO, run Ads, grow Social Media, and develop AI agents for your business success.",
     images: [
       {
-        url: "/og-image-rev.png",
+        url: "https://webvisionagency.ma/og-image-rev.png",
         alt: "Web Vision Agency - Digital Solutions",
         width: 1200,
         height: 630,
@@ -54,7 +54,7 @@ export const metadata = {
     title: "Web Vision Agency | Websites • SEO • Ads • AI",
     description:
       "Full-service digital agency: Websites, SEO, Ads, Social Media growth & AI-powered solutions.",
-    images: ["/og-image-rev.png"],
+    images: ["https://webvisionagency.ma/og-image-rev.png"],
   },
 };
 
