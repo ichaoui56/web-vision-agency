@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 
+
 export const metadata = {
   title: "About Web Vision Agency | Morocco's Leading Digital Marketing Experts",
   description: "Meet the expert team behind Morocco's #1 digital marketing agency. 5+ years of experience, 500+ successful projects, and a proven track record of transforming businesses across North Africa.",
